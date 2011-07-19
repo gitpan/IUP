@@ -16,12 +16,12 @@ On all platform it uses native GUI widgets.
   <table border="1">
     <tbody align="center">
       <tr>
-        <th style="text-align: center;">GTK</th>
-        <th style="text-align: center;">Windows Vista</th>
+        <th>GTK</th>
+        <th>Windows Vista</th>
       </tr>
       <tr>      
-        <td style="vertical-align:top;"><img src="http://kmx.github.com/perl-iup/spec/sample_gtk_small.png"></td>
-        <td style="vertical-align:top;"><img src="http://kmx.github.com/perl-iup/spec/sample_vista_small.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/spec/sample_gtk_small.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/spec/sample_vista_small.png"></td>
       </tr>
     </tbody>
   </table>
@@ -29,12 +29,12 @@ On all platform it uses native GUI widgets.
   <table border="1">
     <tbody align="center">
       <tr>
-	<th style="text-align: center;">Motif</th>
-	<th style="text-align: center;">Windows Classic</th>
+	<th>Motif</th>
+	<th>Windows Classic</th>
       </tr>
       <tr>      
-	<td style="vertical-align:top;"><img src="http://kmx.github.com/perl-iup/spec/sample_mot_small.png"></td>
-	<td style="vertical-align:top;"><img src="http://kmx.github.com/perl-iup/spec/sample_win2k_small.png"></td>
+	<td><img src="http://kmx.github.com/perl-iup/spec/sample_mot_small.png"></td>
+	<td><img src="http://kmx.github.com/perl-iup/spec/sample_win2k_small.png"></td>
       </tr>
     </tbody>
   </table>
@@ -42,7 +42,7 @@ On all platform it uses native GUI widgets.
 
 =end html
 
-B<Source code:> see L<sample.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_01/examples//sample.pl>
+B<Source code:> see L<sample.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples//sample.pl>
 
 =head2 IUP's Strengths
 
@@ -99,7 +99,7 @@ they are handled by separate L<Alien::IUP|Alien::IUP> module.
 
 At this point we show just basic ideas behind IUP based GUI applications.
 For more details see L<IUP::Manual::01_Introduction|IUP::Manual::01_Introduction>.
-Or if you wanna skip the theory you can go directly to L<examples|http://cpansearch.perl.org/src/KMX/IUP-0.001_01/examples/>
+Or if you wanna skip the theory you can go directly to L<examples|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/>
 directory of IUP distribution or look at L<IUP::Manual::09_Examples|IUP::Manual::09_Examples>.
 
 =head3 Simple GUI Dialogs
@@ -809,7 +809,7 @@ Shows a modal dialog containing a message and up to three buttons.
 =begin html
 
 <p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/alarm.png"></td>
+<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/alarm.png">
 </p>
 
 =end html
@@ -868,14 +868,14 @@ pre-defined dialog L<IUP::ColorDlg|IUP::ColorDlg>.
 
 <p>
   <table border="1">
-    <tbody align="center">
+    <tbody align="left">
       <tr>
         <th>MS&nbsp;Windows</th>
-        <td style="text-align:left;"><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/colordlg_cb.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/colordlg_cb.png"></td>
       </tr>
       <tr>
         <th>GTK</th>
-        <td style="text-align:left;"><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/colordlg_gtk.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/colordlg_gtk.png"></td>
       </tr>
     </tbody>
   </table>
@@ -920,18 +920,18 @@ filename. Uses pre-defined dialog L<IUP::FileDlg|IUP::FileDlg>.
 
 <p>
   <table border="1">
-    <tbody align="center">
+    <tbody align="left">
       <tr>
         <th>MS&nbsp;Windows</th>
-        <td style="text-align:left;"><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_win.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_win.png"></td>
       </tr>
       <tr>
         <th>GTK</th>
-        <td style="text-align:left;"><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_gtk.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_gtk.png"></td>
       </tr>
       <tr>
         <th>Motif</th>
-        <td style="text-align:left;"><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_mot.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_mot.png"></td>
       </tr>
     </tbody>
   </table>
@@ -985,7 +985,7 @@ of controls.
 =begin html
 
 <p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/getparam.png"></td>
+<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/getparam.png">
 </p>
 
 
@@ -1242,7 +1242,7 @@ Shows a modal dialog to edit a multiline text.
 =begin html
 
 <p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/gettext.png"></td>
+<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/gettext.png">
 </p>
 
 =end html
@@ -1277,7 +1277,7 @@ selection list.
 =begin html
 
 <p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/listdialog.png"></td>
+<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/listdialog.png">
 </p>
 
 =end html
@@ -1335,18 +1335,18 @@ a L<IUP::MessageDlg|IUP::MessageDlg>.
 
 <p>
   <table border="1">
-    <tbody align="center">
+    <tbody align="left">
       <tr>
         <th>MS&nbsp;Windows</th>
-        <td style="text-align:left;"><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/messagedlg_win.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/messagedlg_win.png"></td>
       </tr>
       <tr>
         <th>GTK</th>
-        <td style="text-align:left;"><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/messagedlg_gtk.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/messagedlg_gtk.png"></td>
       </tr>
       <tr>
         <th>Motif</th>
-        <td style="text-align:left;"><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/messagedlg_mot.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/messagedlg_mot.png"></td>
       </tr>
     </tbody>
   </table>
