@@ -35,13 +35,15 @@ see L<IUP::Manual::03_Attributes|IUP::Manual::03_Attributes>. Attributes specifi
 
 =over
 
-=item * B<ACTIVE>
+=item B<ACTIVE>
 
 The only difference between an active label and an inactive
 one is its visual feedback. Possible values: "YES, "NO". Default:
 "YES".
 
-=item * B<ALIGNMENT> (non inheritable)
+=item B<ALIGNMENT>
+
+I<(non inheritable)>
 
 Horizontal and vertical alignment.
 Possible values: "ALEFT", "ACENTER" and "ARIGHT", combined to "ATOP",
@@ -50,23 +52,27 @@ also accepted, like "ARIGHT" or ":ATOP", the other value will be used
 from the current alignment. In Motif, vertical alignment is restricted
 to "ACENTER". (vertical alignment since iup-3.0)
 
-=item * L<BGCOLOR|IUP::Manual::03_Attributes/BGCOLOR>
+=item L<BGCOLOR|IUP::Manual::03_Attributes/BGCOLOR>
 
 Ignored, transparent in all
 systems. Will use the background color of the native parent.
 
-=item * B<ELLIPSIS> [Windows and GTK only]
+=item B<ELLIPSIS>
+
+I<[Windows and GTK only]>
 
 Add an ellipsis: "..." to the text
 if there is not enough space to render the entire string. Can be "YES"
 or "NO". Default: "NO".  (GTK 2.6)
 
-=item * L<FGCOLOR|IUP::Manual::03_Attributes/FGCOLOR>
+=item L<FGCOLOR|IUP::Manual::03_Attributes/FGCOLOR>
 
 Text color. Default: the global
 attribute DLGFGCOLOR.
 
-=item * B<IMAGE> (non inheritable)
+=item B<IMAGE>
+
+I<(non inheritable)>
 
 Image name. If set before map defines the
 behavior of the label to contain an image. The natural size will be
@@ -81,27 +87,33 @@ the colors will be replaced by a modified version of the background
 color creating the disabled effect. GTK will also change the inactive
 image to look like other inactive objects.
 
-=item * B<MARKUP> [GTK only]
+=item B<MARKUP>
+
+I<[GTK only]>
 
 Allows the title string to contains pango markup
 commands. Works only if a mnemonic is NOT defined in the title. Can be
 "YES" or "NO". Default: "NO".
 
-=item * B<PADDING>
+=item B<PADDING>
 
 Internal margin. Works just like the MARGIN attribute of
 the L<IUP::Hbox> and <IUP::Vbox> containers, but uses a different name to avoid
 inheritance problems. Not used when SEPARATOR is used. Default value:
 "0x0". 
 
-=item * B<SEPARATOR> (creation only, non inheritable)
+=item B<SEPARATOR>
+
+I<(creation only, non inheritable)>
 
 Turns the label into a
 line separator. Possible values: "HORIZONTAL" or "VERTICAL". When
 changed before mapping the EXPAND attribute is set to "HORIZONTAL" or
 "VERTICAL" accordingly.
 
-=item * L<TITLE|IUP::Manual::03_Attributes/TITLE> (non inheritable)
+=item L<TITLE|IUP::Manual::03_Attributes/TITLE>
+
+I<(non inheritable)>
 
 Label's text. If
 SEPARATOR or IMAGE are not defined before map, then the default
@@ -114,7 +126,9 @@ show the "&" character instead of defining a mnemonic. The next control
 from the label will be activated from any control in the dialog using
 the "Alt+key" combination. (mnemonic support since iup-3.0)
 
-=item * B<WORDWRAP> [Windows and GTK only]
+=item B<WORDWRAP>
+
+I<[Windows and GTK only]>
 
 Enables or disable the wrapping of
 lines that does not fits in the label. Can be "YES" or "NO". Default:
@@ -145,11 +159,13 @@ see L<IUP::Manual::04_Callbacks|IUP::Manual::04_Callbacks>. Callbacks specific t
 
 =over
 
-=item * L<BUTTON_CB|IUP::Manual::04_Callbacks/BUTTON_CB>
+=item L<BUTTON_CB|IUP::Manual::04_Callbacks/BUTTON_CB>
 
 Action generated when any mouse button is pressed or released. (since iup-3.3)
 
-=item * L<DROPFILES_CB|IUP::Manual::04_Callbacks/DROPFILES_CB> [Windows and GTK Only]
+=item L<DROPFILES_CB|IUP::Manual::04_Callbacks/DROPFILES_CB>
+
+I<[Windows and GTK Only]>
 
 Action generated when one or more files are dropped in the element. (since iup-3.3)
 
@@ -179,59 +195,59 @@ The element B<IUP::Label> is used in the following sample scripts:
 
 =over
 
-=item * L<0-basic/canvas2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/canvas2.pl> - IUP::Canvas example
+=item * L<0-basic/canvas2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/canvas2.pl> - IUP::Canvas example
 
-=item * L<0-basic/cbox.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/cbox.pl> - IUP::Cbox example
+=item * L<0-basic/cbox.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/cbox.pl> - IUP::Cbox example
 
-=item * L<0-basic/dial.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/dial.pl> - IUP::Dial example
+=item * L<0-basic/dial.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/dial.pl> - IUP::Dial example
 
-=item * L<0-basic/dialog1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/dialog1.pl> - IUP::Dialog example
+=item * L<0-basic/dialog1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/dialog1.pl> - IUP::Dialog example
 
-=item * L<0-basic/frame1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/frame1.pl> - IUP::Frame Example
+=item * L<0-basic/frame1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/frame1.pl> - IUP::Frame Example
 
-=item * L<0-basic/idle.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/idle.pl> - IUP->SetIdle Example
+=item * L<0-basic/idle.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/idle.pl> - IUP->SetIdle Example
 
-=item * L<0-basic/image.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/image.pl> - IUP::Image example
+=item * L<0-basic/image.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/image.pl> - IUP::Image example
 
-=item * L<0-basic/label.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/label.pl> - IUP::Label example
+=item * L<0-basic/label.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/label.pl> - IUP::Label example
 
-=item * L<0-basic/layoutdialog.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/layoutdialog.pl> - IUP::LayoutDialog example
+=item * L<0-basic/layoutdialog.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/layoutdialog.pl> - IUP::LayoutDialog example
 
-=item * L<0-basic/list2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/list2.pl> - IUP::List example
+=item * L<0-basic/list2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/list2.pl> - IUP::List example
 
-=item * L<0-basic/message_clone.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/message_clone.pl>
+=item * L<0-basic/message_clone.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/message_clone.pl>
 
-=item * L<0-basic/plot_advanced.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/plot_advanced.pl> - Plot controls
+=item * L<0-basic/plot_advanced.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/plot_advanced.pl> - Plot controls
 
-=item * L<0-basic/sbox1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/sbox1.pl> - IUP::Sbox example
+=item * L<0-basic/sbox1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/sbox1.pl> - IUP::Sbox example
 
-=item * L<0-basic/sbox2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/sbox2.pl> - IUP::Sbox example
+=item * L<0-basic/sbox2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/sbox2.pl> - IUP::Sbox example
 
-=item * L<0-basic/tabs1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/tabs1.pl> - IUP::Tabs example 
+=item * L<0-basic/tabs1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/tabs1.pl> - IUP::Tabs example 
 
-=item * L<0-basic/tabs3.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/tabs3.pl> - IUP::Tabs example 
+=item * L<0-basic/tabs3.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/tabs3.pl> - IUP::Tabs example 
 
-=item * L<0-basic/text_format.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/text_format.pl> - IUP::Text (formating) example
+=item * L<0-basic/text_format.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/text_format.pl> - IUP::Text (formating) example
 
-=item * L<0-basic/timer.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/timer.pl> - IUP::Timer example
+=item * L<0-basic/timer.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/timer.pl> - IUP::Timer example
 
-=item * L<0-basic/tray.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/tray.pl> - IUP::Dialog + TRAY / TRAYTIP / TRAYIMAGE example
+=item * L<0-basic/tray.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/tray.pl> - IUP::Dialog + TRAY / TRAYTIP / TRAYIMAGE example
 
-=item * L<0-basic/tree_set_attrs.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/tree_set_attrs.pl> - IUP::Tree example (attributes)
+=item * L<0-basic/tree_set_attrs.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/tree_set_attrs.pl> - IUP::Tree example (attributes)
 
-=item * L<0-basic/val.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/val.pl> - IUP::Val example
+=item * L<0-basic/val.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/val.pl> - IUP::Val example
 
-=item * L<0-basic/zbox.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/0-basic/zbox.pl> - IUP::Zbox example
+=item * L<0-basic/zbox.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/0-basic/zbox.pl> - IUP::Zbox example
 
-=item * L<1-apps/app-mdi.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/1-apps/app-mdi.pl> - IUP app example
+=item * L<1-apps/app-mdi.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/1-apps/app-mdi.pl> - IUP app example
 
-=item * L<1-apps/app-plot-demo.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/1-apps/app-plot-demo.pl> - dials for zooming
+=item * L<1-apps/app-plot-demo.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/1-apps/app-plot-demo.pl> - dials for zooming
 
-=item * L<1-apps/app-sample1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/1-apps/app-sample1.pl> - example used for screenshot - IUP.pod
+=item * L<1-apps/app-sample1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/1-apps/app-sample1.pl> - example used for screenshot - IUP.pod
 
-=item * L<1-apps/app-sample2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/1-apps/app-sample2.pl> - xxxTODO xxx some better callback
+=item * L<1-apps/app-sample2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/1-apps/app-sample2.pl> - xxxTODO xxx some better callback
 
-=item * L<1-apps/app-simple-demo.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_02/examples/1-apps/app-simple-demo.pl> - example used for screenshot - IUP.pod
+=item * L<1-apps/app-simple-demo.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_03/examples/1-apps/app-simple-demo.pl> - example used for screenshot - IUP.pod
 
 =back 
 
