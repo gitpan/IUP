@@ -1,0 +1,64 @@
+TYPEMAP
+#string
+char *			T_STR_OR_NULL
+const char *		T_STR_OR_NULL
+#pointer
+unsigned char *		T_PTR_OR_NULL
+Ihandle *		T_PTR_OR_NULL
+cdCanvas *		T_PTR_OR_NULL
+cdBitmap *		T_PTR_OR_NULL
+cdPattern *		T_PTR_OR_NULL
+cdStipple *		T_PTR_OR_NULL
+Icallback		T_PTR_OR_NULL
+void *			T_PTR_OR_NULL
+#xxx todo: maybe remove in the end
+cdState *		T_PTR_OR_NULL
+cdContext *		T_PTR_OR_NULL
+cdImage *		T_PTR_OR_NULL
+
+### pointer with automatic NULL<->undef conversion on input/output
+INPUT
+T_PTR_OR_NULL
+	$var = (SvIOK($arg)) ? INT2PTR($type,SvIVX($arg)) : NULL;
+
+OUTPUT
+T_PTR_OR_NULL
+	if ($var==NULL) XSRETURN_UNDEF;
+	else sv_setiv($arg, PTR2IV($var));
+
+### string (char*) with automatic NULL<->undef conversion on input/output
+# old approach: $var = (SvPOK($arg)) ? SvPVX($arg) : NULL; (this does not stringify numeric values)
+INPUT
+T_STR_OR_NULL
+	$var = (SvOK($arg)) ? SvPV_nolen($arg) : NULL;
+
+OUTPUT
+T_STR_OR_NULL
+	if ($var==NULL) XSRETURN_UNDEF;
+	else sv_setpv($arg, $var);
+
+### common stuff
+
+# The Perl object is blessed into 'CLASS', which should be a
+# char* having the name of the package for the blessing.
+OUTPUT
+O_OBJECT
+        if ($var) {
+          void** pointers = malloc(2 * sizeof(void*));
+          pointers[0] = (void*)$var;
+          pointers[1] = (void*)PERL_GET_CONTEXT;
+  	  sv_setref_pv( $arg, CLASS, (void*)pointers );
+        } else {
+          XSRETURN_UNDEF;
+        }
+
+INPUT
+O_OBJECT
+	if( sv_isobject($arg) && (SvTYPE(SvRV($arg)) == SVt_PVMG) ) {
+           void** pointers = (void**)(SvIV((SV*)SvRV( $arg ))); 
+           $var = ($type)(pointers[0]);
+        } else if ($arg == 0) {
+           XSRETURN(0);
+        } else {
+           XSRETURN_UNDEF;
+        }

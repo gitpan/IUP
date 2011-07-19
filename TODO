@@ -1,0 +1,305 @@
+################ the last time working on ################ 
+
+- POD hacking - all elements more or less documented
+
+##########################################################
+
+IDEA
+- nicer pod http://search.cpan.org/~jfearn/HTML-Tree-4.2/lib/HTML/Element.pm (related modules)
+
+!!Decide!!######## move to separate dist
+- IUP::OLE
+- we probably need IUP::ConfigData for listing available features (iupole, iupgl ...)
+
+!!Big Task!!######## doc
+- Cleanup first (in this order):
+  - IUP.pod
+  - I::M::Elements.pod
+  - I::M::Callbacks.pod
+  - I::M::Attributes.pod
+  - I::M::Introduction.pod
+- Notes:
+  - pplot: note in doc that DS_ has to be set after ->PPlotEnd()
+  - tree: note in doc that tree->SetAttribude has to go after dialog->Show
+
+!!Big Task!!######## tests
+- CHECK Test::NeedsDisplay
+  use Test::NeedsDisplay ':skip_all';
+- skip pattern
+  plan skip_all => "\$ENV{RELEASE_TESTING} required fot testing", unless $ENV{RELEASE_TESTING};
+  eval "use Win32::Job ()";
+  plan skip_all => "Can't interrupt hung processes without Win32::Job" if $@;
+  plan skip_all => "No GUI available, skipping" unless IUP->Open == IUP_OPENED;
+- consider moving cross-check-... into xt/*
+- maybe close after timeout (IUP::Timer -> return IUP_CLOSE)
+
+!!Big Task!! ######## OleControl.pm
+- $o->IUNKNOWN ... pointer created by CoCreateInstance Function http://msdn.microsoft.com/en-us/library/ms686615%28v=vs.85%29.aspx
+- perahps integrate with Win32::OLE like $o->ole->methodname(...)
+- Win32::OLE needs something like new_from_iunknown
+  IUnknown *punk = ... value from $olecontrol->IUNKNOWN;
+  HRESULT hr;
+  IDispatch *pDispatch = NULL;
+  hr = punk->QueryInterface(IID_IDispatch, (void**)&pDispatch);
+  punk->Release();
+  ST(0) = CreatePerlObject(aTHX_ stash, pDispatch, destroy);
+- see Wx+OLE/ActiveX integration http://search.cpan.org/~mdootson/Wx-ActiveX-0.15/lib/Wx/ActiveX.pm
+- missing example: notepad.wlua? olecontrol_browser.wlua?
+- missing -> add
+- conditionally only on Win32
+
+!!Big Task!!######## IUP::Canvas (now works without Bitmap/Image/Palette/Pattern related functions)
+- implement missing XS methods to IUP::Internal::Canvas (see notes in Canvas.xs)
+
+1/ non-Bitmap (easier to implement)
+# void cdCanvasTransform(cdCanvas* canvas, const double* matrix);
+# double* cdCanvasGetTransform(cdCanvas* canvas);
+# void cdCanvasTransformMultiply(cdCanvas* canvas, const double* matrix);
+# void cdCanvasLineStyleDashes(cdCanvas* canvas, const int* dashes, int count);
+# void cdCanvasStipple(cdCanvas* canvas, int w, int h, const unsigned char* stipple);
+# unsigned char* cdCanvasGetStipple(cdCanvas* canvas, int *n, int *m);
+# void cdCanvasPattern(cdCanvas* canvas, int w, int h, long const int *pattern);
+# long* cdCanvasGetPattern(cdCanvas* canvas, int* n, int* m);
+# double* cdCanvasVectorTextTransform(cdCanvas* canvas, const double* matrix);
+# void cdCanvasPalette(cdCanvas* canvas, int n, const long *palette, int mode);
+# void wdCanvasStipple(cdCanvas* canvas, int w, int h, const unsigned char *fgbg, double w_mm, double h_mm);
+# void wdCanvasPattern(cdCanvas* canvas, int w, int h, const long *color, double w_mm, double h_mm);
+    n_idata2SV(count,dataptr)
+    SV2n_idata(srcSV,&count,&dataptr)		do malloc!!!
+    r_c_cdata2SV(rows,cols,dataptr)
+    SV2r_c_cdata(srcSV,&rows,&cols,&dataptr)	do malloc!!!
+    r_c_ldata2SV(rows,cols,dataptr)
+    SV2r_c_ldata(srcSV,&rows,&cols,&dataptr)	do malloc!!!
+    transf_matrix2SV(matrix_2x3)
+    SV2transf_matrix(srcSV,&matrix_2x3)
+
+sample XS code from FTDI::D2XX:
+
+FT_STATUS
+FT_Read( pHandle, Buffer, nBufferSize, lpBytesReturned)
+    FT_HANDLE * pHandle
+    SV * Buffer = NO_INIT
+    DWORD nBufferSize
+    DWORD lpBytesReturned = NO_INIT
+	PREINIT:
+		char* lpBuffer;
+		AV* array;
+		DWORD i;
+	CODE:		
+		lpBuffer = malloc(nBufferSize); // get mem
+		RETVAL = FT_Read(*pHandle, lpBuffer, nBufferSize, &lpBytesReturned);		
+		array = (AV *)sv_2mortal((SV *)newAV()); // new array		
+		av_extend(array,lpBytesReturned); // extend it ( not required but faster) 		
+		for( i = 0; i< lpBytesReturned; i++) { // copy to array
+		  av_push(array,newSVuv(lpBuffer[i]));
+		}		
+		free(lpBuffer); // give back mem		
+		Buffer = newRV((SV *) array); // return reference of the array
+	OUTPUT: 
+		Buffer
+		lpBytesReturned
+		RETVAL
+
+FT_STATUS
+FT_Write( ftHandle, Buffer, nBufferSize, BytesWritten)
+    	FT_HANDLE  ftHandle
+    	SV * Buffer
+    	DWORD nBufferSize
+    	DWORD BytesWritten = NO_INIT
+    	PREINIT:
+		AV * arrayBuffer;
+		char * lpBuffer;
+		DWORD i;
+	CODE:	
+		if( (!SvROK(Buffer)) || (SvTYPE(SvRV(Buffer)) != SVt_PVAV) || !((DWORD)av_len((AV *)SvRV(Buffer)) < nBufferSize)) {
+		  printf("Data type error\n");			
+		  XSRETURN_UNDEF;
+		}
+		lpBuffer = malloc(nBufferSize);
+		arrayBuffer = (AV *)SvRV(Buffer);
+		for(i=0; i<nBufferSize;i++) {
+		  lpBuffer[i] = (char)SvUV(*av_fetch(arrayBuffer,i,0));
+		}
+		RETVAL = FT_Write( ftHandle, lpBuffer, nBufferSize, &BytesWritten);
+		free(lpBuffer);
+	OUTPUT:
+		RETVAL
+		BytesWritten
+
+    
+--
+cd.CreatePattern(width, height: number) -> (pattern: cdPattern)
+cd.KillPattern(pattern: cdPattern)
+--
+cd.CreateStipple(width, height: number) -> (stipple: cdStipple)
+cd.KillStipple(stipple: cdStipple)
+--
+cd.CreatePalette(size: number) -> (palette: cdPalette) [in Lua Only]
+cd.KillPalette(palette: cdPalette) [in Lua Only]
+
+2/ Bitmap related - not decided yet how to implement them
+#(depr) void cdCanvasGetImageRGB(cdCanvas* canvas, unsigned char* r, unsigned char* g, unsigned char* b, int x, int y, int w, int h);
+#(depr) void cdCanvasPutImageRectRGB(...);
+#(depr) void cdCanvasPutImageRectRGBA(...);
+#(depr) void cdCanvasPutImageRectMap(...);
+#(depr) void wdCanvasPutImageRectRGB(...);
+#(depr) void wdCanvasPutImageRectRGBA(...);
+#(depr) void wdCanvasPutImageRectMap(...);
+# cdBitmap* cdCreateBitmap(int w, int h, int type);
+# cdBitmap* cdInitBitmap(int w, int h, int type, ...);
+# void cdKillBitmap(cdBitmap* bitmap);
+# unsigned char* cdBitmapGetData(cdBitmap* bitmap, int dataptr);
+# void cdBitmapSetRect(cdBitmap* bitmap, int xmin, int xmax, int ymin, int ymax);
+# void cdCanvasPutBitmap(cdCanvas* canvas, cdBitmap* bitmap, int x, int y, int w, int h);
+# void cdCanvasGetBitmap(cdCanvas* canvas, cdBitmap* bitmap, int x, int y);
+# void cdBitmapRGB2Map(cdBitmap* bitmap_rgb, cdBitmap* bitmap_map);
+# void cdRGB2Map(int width, int height, const unsigned char* red, const unsigned char* green, const unsigned char* blue, unsigned char* index, int pal_size, long *color);
+# void wdCanvasHardcopy(cdCanvas* canvas, cdContext* ctx, void *data, void(*draw_func)(cdCanvas *canvas_copy));
+# void wdCanvasPutBitmap(cdCanvas* canvas, cdBitmap* bitmap, double x, double y, double w, double h);
+#? cdImage* cdCanvasCreateImage(cdCanvas* canvas, int w, int h); [in C]
+#? void cdKillImage(cdImage* image); [in C]
+#? void cdCanvasGetImage(cdCanvas* canvas, cdImage* image, int x, int y); [in C]
+#? void cdCanvasPutImageRect(cdCanvas* canvas, cdImage* image, int x, int y, int xmin, int xmax, int ymin, int ymax); [in C]
+#? void cdCanvasScrollArea(cdCanvas* canvas, int xmin, int xmax, int ymin, int ymax, int dx, int dy); [in C]
+--
+(exists)cd.CreateBitmap(w, h, type: number) -> (bitmap: cdBitmap) [in Lua]
+(exists)cd.KillBitmap(bitmap: cdBitmap) [in Lua]
+--
+deprecated kill/create
+cd.KillImageRGB
+cd.KillImageRGBA
+cd.KillImageMap
+
+### COSMETICS ################################################################################################
+
+(cosmetics)######## IUP::Canvas
+- XS autodetection cdCanvasLine vs. cdfCanvasLine
+
+(cosmetics)######## global
+- icon - see y:\IUP3.3\fltk\FLTK-0.532007\inc\MBX\FLTK.pm  (ACTION_code)
+- Build.PL: no_index => {directory => [qw[examples inc t]], files => [qw[xs/include/ppport.h]]
+
+(cosmetics)######## Check this:
+- consider return; vs. return undef;
+  return IUP::Internal::LibraryIup::_voidfunc; == return;
+  return IUP::Internal::LibraryIup::_nonvoidfunc; == return undef;
+  SUGGESTION: always call: return IUP::Internal::LibraryIup::_func; (even for void functions)
+- http://stackoverflow.com/questions/3435122/whats-the-difference-between-return-and-return-undef-in-perl
+- "Perl Best Practices" (and Perl::Critic) suggest not using return undef
+
+(cosmetics)######## IUP::Matrix (same as with common attributes)
+- try to implement:
+  my $m = IUP::Matrix->new(...);
+  $m->[12,44] = 'value';
+  $m->data->[12,44] = 'value';
+  $m->{"BGCOLOR12:44"} = '12 12 12';
+  (see SDLx::Surface + SDLx::Surface::TiedMatrix)
+
+(cosmetics)######## global
+- cleanup unused funcs from LibraryIup.XS - cross-check-xs-func.pl
+
+(cosmetics)######## IUP (main module)
+- ??? better detection of initialized gui than (IUP->Open == IUP_OPENED)?
+- ??? detection of codepage used in GUI
+
+(cosmetics)######## LibraryIUP.xs + Canvas.xs
+- consider IUP::Internal::AllInOneLib.xs
+- should save 2-3MB
+
+(cosmetics)######## IUP::Submenu
+- consider using $firstonly param of new()
+
+(cosmetics)######## IUP::ProgressBar
+- FGCOLOR seems to be ignored
+
+(cosmetics)######## IUP::Split
+- maybe support new($child1, $child2) instead of new(child1=>$child1, child2=>$child2)
+
+(cosmetics)######## IUP::Internal::Element
+- change: _create_element should set $self->ihandle value
+- SetAttribute("ATT", $elem) vs. $elem = GetAttribute("ATT") (now Get does not work)
+
+### NOT NOW, MAYBE LATER ################################################################################################
+
+(not now, maybe later)######## implement threads demo
+- threads+Wx - http://use.perl.org/~Alias/journal/40377
+
+(not now, maybe later)######## memory issues
+- moustly should be handled, some corner cases may occur
+- see http://stackoverflow.com/questions/2223721/common-perl-memory-reference-leak-patterns
+- somehow check memory leaks - http://use.perl.org/~jozef/journal/40411
+- somehow check memory consumption - Devel::Size, Devel::Peak, PerlBench 
+  - http://stackoverflow.com/questions/1359771/perl-memory-usage-profiling-and-leak-detection
+  - http://www252.pair.com/comdog/mastering_perl/Chapters/06.benchmarking.html
+- check memleaks by storing SetAttribute("ATTR", $ref)
+
+(not now, maybe later)######## unicode in filenames (cpodepage magic)
+http://www.i-programmer.info/programming/other-languages/1973-unicode-issues-in-perl.html
+
+(not now, maybe later)######## missing examples
+- no example for: Clipboard.pm ?
+- no example for: User.pm ?
+- no example for: ColorDlg.pm ?
+- no example for: FontDlg.pm ?
+
+(not now, maybe later)######## IUP::LayoutDialog
+- somehow works but generaly not usable
+
+(not now, maybe later)######## Ideas from lua bindings:
+- global registers _IUPLUA_WIDGET_TABLE_REF
+
+(not now, maybe later)######## Ideas from ruby bindings:
+- iup.* namespace
+- cd.* namespace (constants cd::BLUE, ...)
+- just one iup.image (RGB, RGBA - ??? perhaps not supported)
+- cdcanvas = Cd.ActiveCanvas()
+- iupim just: IupLoadImage, IupSaveImage
+- GLCanvasOpen, GL... (global function, not methods of glcanvas class)
+
+(not now, maybe later)######## Linux - platform specific issues
+- (<unknown>:4352): Pango-WARNING **: Error loading GSUB table 85
+  before MainLoop
+- 'Quit' in main menu requires double click
+
+(not now, maybe later)######## Packaging (not a priority)
+- RHEL 5 + FC 13,12,11
+  - http://search.cpan.org/dist/cpan2rpm/
+  - http://search.cpan.org/dist/Ovid/
+- Db 4,5 (Ubuntu?)
+  - http://search.cpan.org/dist/Debian-Apt-PM/
+  - http://www.debian-administration.org/articles/78
+    http://www.opensourcery.com/blog/hans-dieter-pearcey/packaging-cpan-modules-debian
+- Linux distro info
+  - http://distrowatch.com/table.php?distribution=ubuntu (10.04/LTS,9.10,8.04/LTS)
+  - http://distrowatch.com/table.php?distribution=debian (5,4)
+  - http://distrowatch.com/table.php?distribution=fedora (13,12,11)
+  - http://distrowatch.com/table.php?distribution=redhat (5,4)
+- vmware images: 
+  - http://chrysaor.info/?page=images&filter=Ubuntu
+  - http://www.thoughtpolice.co.uk/vmware/
+
+(not now, maybe later)######## Callbacks generation (not a priority)
+- missing support for K_* callbacks (no hurry, lua does not implement them as well)
+
+### REJECTED FOR NOW ################################################################################################
+
+#IUP - consider adding iupKeyCodeToName
+#IUP - consider adding iupKeyNameToCode
+#IUP - ListDialog() decide whether multiselect API (returning array, not arrayref) is OK - yes for now
+#IUP - Idle? #xxxsomething causes progressbar3.pl to hangup/crash (after pressing accel/decel) - cannot reproduce
+#IUP - is GetIhClassName() func name OK - yes for now
+#IUP - IUP->GetIdle? or IUP->CheckIdle? #xxx how to check existing idle handler? - not for now
+
+#IUP::Internal::Element - list2.pl: original examples uses inheritable IUP attribute _LABEL for storing pointers for iup elements (do we want to support this in perl?)
+#IUP::Internal::Element - passing undef to child=> ... - maybe later
+  Can't call method "ihandle" on an undefined value at
+  Y:\@repos\perl-iup\blib\lib/IUP/Internal/Element.pm line 574. (better error message)
+#IUP::Internal::Element - consider checking arg count SetAttributeId($$$) SetAttributeId2($$$$) - not now
+
+#IUP::List - IUP::List->new() items 0-based or 1-based index? (item[0] >> attribute 1)
+
+#IUP::Frame - missing accessor $frame->MARGIN("10x10"); - MARGIN not in official doc for IupFrame
+
+#IUP::PPlot - maybe add AxsBounds() to IUP::PPlot # see examples\0-basic\pplot4.pl - not now
+#IUP::PPlot - maybe add AxsBoundsAuto() - not now
+#IUP::PPlot - PPlotInsertPoints - CRASHES!!! seems to be a bug iup (asked scuri)
