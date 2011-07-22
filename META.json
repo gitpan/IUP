@@ -31,7 +31,7 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Alien::IUP" : "0.115",
+            "Alien::IUP" : "0.3",
             "Carp" : 0,
             "ExtUtils::CBuilder" : 0,
             "Module::Build" : 0,
@@ -55,7 +55,7 @@
    "provides" : {
       "IUP" : {
          "file" : "lib/IUP.pm",
-         "version" : "0.001_03"
+         "version" : "0.001_04"
       },
       "IUP::Button" : {
          "file" : "lib/IUP/Button.pm",
@@ -278,5 +278,5 @@
          "url" : "http://github.com/kmx/perl-iup"
       }
    },
-   "version" : "0.001_03"
+   "version" : "0.001_04"
 }
