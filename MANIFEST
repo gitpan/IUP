@@ -157,8 +157,8 @@ lib/IUP/MessageDlg.pm
 lib/IUP/MessageDlg.pod
 lib/IUP/Normalizer.pm
 lib/IUP/Normalizer.pod
-lib/IUP/Plot.pm
-lib/IUP/Plot.pod
+lib/IUP/PPlot.pm
+lib/IUP/PPlot.pod
 lib/IUP/ProgressBar.pm
 lib/IUP/ProgressBar.pod
 lib/IUP/Radio.pm

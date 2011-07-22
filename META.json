@@ -55,7 +55,7 @@
    "provides" : {
       "IUP" : {
          "file" : "lib/IUP.pm",
-         "version" : "0.001_04"
+         "version" : "0.001_05"
       },
       "IUP::Button" : {
          "file" : "lib/IUP/Button.pm",
@@ -193,8 +193,8 @@
          "file" : "lib/IUP/Normalizer.pm",
          "version" : 0
       },
-      "IUP::Plot" : {
-         "file" : "lib/IUP/Plot.pm",
+      "IUP::PPlot" : {
+         "file" : "lib/IUP/PPlot.pm",
          "version" : 0
       },
       "IUP::ProgressBar" : {
@@ -278,5 +278,5 @@
          "url" : "http://github.com/kmx/perl-iup"
       }
    },
-   "version" : "0.001_04"
+   "version" : "0.001_05"
 }

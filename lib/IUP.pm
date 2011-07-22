@@ -10,7 +10,7 @@ use IUP::Internal::LibraryIup;
 use IUP::Constants;
 
 # following recommendation from http://www.dagolden.com/index.php/369/version-numbers-should-be-boring/
-our $VERSION = "0.001_04";
+our $VERSION = "0.001_05";
 $VERSION = eval $VERSION;
 
 sub BEGIN {
@@ -35,7 +35,7 @@ sub import {
                      Hbox Image Item Label LayoutDialog List Menu MessageDlg Normalizer ProgressBar Radio 
                      Sbox Separator Spin SpinBox Split Submenu Tabs Text Timer Toggle Tree User Val Vbox Zbox OleControl/], 
 		     #xxxFIXME add OleControl conditionally
-     ':extended' => [qw/Matrix Cells Canvas CanvasGL Plot/],
+     ':extended' => [qw/Matrix Cells Canvas CanvasGL PPlot/],
      ':all' => [],
   );  
   @{$tags{':all'}} = ( @{$tags{':basic'}}, @{$tags{':extended'}} );

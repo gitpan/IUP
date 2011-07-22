@@ -42,7 +42,7 @@ On all platform it uses native GUI widgets.
 
 =end html
 
-B<Source code:> see L<1-apps/app-sample1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_04/examples//1-apps/app-sample1.pl>
+B<Source code:> see L<1-apps/app-sample1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_05/examples//1-apps/app-sample1.pl>
 
 =head2 IUP's Strengths
 
@@ -71,7 +71,7 @@ perl GUI toolkits. Good starting points are L<IUP|IUP> and L<IUP::Manual::01_Int
 
 =item * B<Advanced Visualization Elements:> Thanks to IUP'S academic origin
 it has several fairly advanced GUI elemts handy for visualisation of scientific
-data (L<IUP::Plot|IUP::Plot>, L<IUP::Matrix|IUP::Matrix>) and 2D
+data (L<IUP::PPlot|IUP::PPlot>, L<IUP::Matrix|IUP::Matrix>) and 2D
 drawing (L<IUP::Canvas|IUP::Canvas>).
 
 =back
@@ -99,7 +99,7 @@ they are handled by separate L<Alien::IUP|Alien::IUP> module.
 
 At this point we show just basic ideas behind IUP based GUI applications.
 For more details see L<IUP::Manual::01_Introduction|IUP::Manual::01_Introduction>.
-Or if you wanna skip the theory you can go directly to L<examples|http://cpansearch.perl.org/src/KMX/IUP-0.001_04/examples/>
+Or if you wanna skip the theory you can go directly to L<examples|http://cpansearch.perl.org/src/KMX/IUP-0.001_05/examples/>
 directory of IUP distribution.
 
 =head3 Simple GUI Dialogs
@@ -364,7 +364,7 @@ L<IUP::Matrix|IUP::Matrix>,
 L<IUP::Menu|IUP::Menu>,
 L<IUP::Normalizer|IUP::Normalizer>,
 L<IUP::Ole|IUP::Ole>,
-L<IUP::Plot|IUP::Plot>,
+L<IUP::PPlot|IUP::PPlot>,
 L<IUP::ProgressBar|IUP::ProgressBar>,
 L<IUP::Radio|IUP::Radio>,
 L<IUP::Sbox|IUP::Sbox>,
