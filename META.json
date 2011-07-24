@@ -55,7 +55,7 @@
    "provides" : {
       "IUP" : {
          "file" : "lib/IUP.pm",
-         "version" : "0.001_05"
+         "version" : "0.001_06"
       },
       "IUP::Button" : {
          "file" : "lib/IUP/Button.pm",
@@ -269,14 +269,14 @@
    "release_status" : "testing",
    "resources" : {
       "bugtracker" : {
-         "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=IUP"
+         "web" : "https://rt.cpan.org/Public/Dist/Display.html?Status=Active&Name=IUP"
       },
       "license" : [
          "http://www.opensource.org/licenses/mit-license.php"
       ],
       "repository" : {
-         "url" : "http://github.com/kmx/perl-iup"
+         "url" : "https://github.com/kmx/perl-iup"
       }
    },
-   "version" : "0.001_05"
+   "version" : "0.001_06"
 }
