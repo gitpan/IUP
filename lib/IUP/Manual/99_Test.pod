@@ -11,9 +11,7 @@ IUP::Manual::99_Test - Testing HTML+POD
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/listdialog.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/listdialog.png"></p>
 
 =end HTML
 
@@ -59,9 +57,7 @@ IUP::Manual::99_Test - Testing HTML+POD
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupole.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupole.png"></p>
 
 =end HTML
 
@@ -94,9 +90,7 @@ IUP::Manual::99_Test - Testing HTML+POD
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupcolorbrowser.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupcolorbrowser.png"></p>
 
 =end HTML
 
@@ -125,9 +119,7 @@ IUP::Manual::99_Test - Testing HTML+POD
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/alarm.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/alarm.png"></p>
 
 =end HTML
 
@@ -173,9 +165,7 @@ IUP::Manual::99_Test - Testing HTML+POD
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupmenu_fromsyntax.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupmenu_fromsyntax.png"></p>
 
 =end HTML
 
@@ -183,9 +173,7 @@ IUP::Manual::99_Test - Testing HTML+POD
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/gettext.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/gettext.png"></p>
 
 =end HTML
 
@@ -216,22 +204,31 @@ IUP::Manual::99_Test - Testing HTML+POD
 
 <p>
   <table border="1">
+    <col style="background-color: rgb(236, 233, 216);">
+    <col style="background-color: rgb(173, 177, 194);">
     <tbody align="center">
       <tr>
         <th style="text-align: center;">GTK</th>
         <th style="text-align: center;">Motif</th>
       </tr>
       <tr>
-        <td style="background-color: rgb(236, 233, 216);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_gtk.png"></td>
-        <td style="background-color: rgb(173, 177, 194);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_mot.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_gtk.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_mot.png"></td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <table border="1">
+    <col style="background-color: rgb(212, 208, 200);">
+    <col style="background-color: rgb(239, 235, 231);">
+    <tbody align="center">
+      <tr>
+        <th style="text-align: center;">Windows Classic</th>
+        <th style="text-align: center;">Windows XP Style</th>
       </tr>
       <tr>
-        <th style="text-align: center;">Windows<br>Classic</th>
-        <th style="text-align: center;">Windows<br>XP Style</th>
-      </tr>
-      <tr>
-        <td style="background-color: rgb(212, 208, 200);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_win2k.png"></td>
-        <td style="background-color: rgb(239, 235, 231);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_winxp.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_win2k.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_winxp.png"></td>
       </tr>
     </tbody>
   </table>
@@ -243,9 +240,7 @@ IUP::Manual::99_Test - Testing HTML+POD
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/images/expand.gif">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/images/expand.gif"></p>
 
 =end HTML
 
@@ -253,9 +248,7 @@ IUP::Manual::99_Test - Testing HTML+POD
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupwebbrowser.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupwebbrowser.png"></p>
 
 =end HTML
 
@@ -263,9 +256,7 @@ IUP::Manual::99_Test - Testing HTML+POD
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/images/shrink.gif">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/images/shrink.gif"></p>
 
 =end HTML
 
@@ -416,16 +407,19 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 <p>
   <table border="1">
-    <tbody align="center">    
+    <col style="vertical-align:top;background-color: rgb(236, 233, 216);">
+    <col style="vertical-align:top;background-color: rgb(236, 233, 216);">
+    <col style="vertical-align:top;background-color: rgb(236, 233, 216);">
+    <tbody align="center">
         <tr>
 		<th>default layout</th>
 		<th>HOMOGENEOUS=YES</th>
 		<th>EXPANDCHILDREN=YES</th>
 	</tr>
 	<tr>
-		<td style="vertical-align:top;background-color: rgb(236, 233, 216);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox.png"></td>
-		<td style="vertical-align:top;background-color: rgb(236, 233, 216);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_homogeneous.png"></td>
-		<td style="vertical-align:top;background-color: rgb(236, 233, 216);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_expandchildren.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_homogeneous.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_expandchildren.png"></td>
 	</tr>
         <tr>
 		<th>default layout</th>
@@ -433,9 +427,9 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 		<th>child "2": VISIBLE=NO, FLOATING=YES</th>
 	</tr>
 	<tr>
-		<td style="vertical-align:top;background-color: rgb(236, 233, 216);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox.png"></td>
-		<td style="vertical-align:top;background-color: rgb(236, 233, 216);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_visible.png"></td>
-		<td style="vertical-align:top;background-color: rgb(236, 233, 216);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_floating.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_visible.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_floating.png"></td>
 	</tr>
     </tbody>
   </table>
@@ -468,9 +462,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/layoutdlg1.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/layoutdlg1.png"></p>
 
 =end HTML
 
@@ -480,6 +472,9 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 <p>
   <table border="1">
+    <col style="background-color: rgb(240, 240, 240);">
+    <col style="background-color: rgb(240, 240, 240);">
+    <col style="background-color: rgb(240, 240, 240);">
     <tbody align="center">    
         <tr>
 		<th>default layout</th>
@@ -487,9 +482,9 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 		<th>EXPANDCHILDREN=YES</th>
 	</tr>
 	<tr>
-		<td style="background-color: rgb(240, 240, 240);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox.png"></td>
-		<td style="background-color: rgb(240, 240, 240);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox_homogeneous.png"></td>
-		<td style="background-color: rgb(240, 240, 240);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox_expandchildren.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox_homogeneous.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox_expandchildren.png"></td>
 	</tr>
     </tbody>
   </table>
@@ -522,9 +517,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupdial.gif">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupdial.gif"></p>
 
 =end HTML
 
@@ -608,9 +601,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/layoutdlg2.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/layoutdlg2.png"></p>
 
 =end HTML
 
@@ -618,9 +609,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupcolorbar.gif">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupcolorbar.gif"></p>
 
 =end HTML
 
@@ -711,9 +700,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupspin.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupspin.png"></p>
 
 =end HTML
 
@@ -721,9 +708,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_align.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_align.png"></p>
 
 =end HTML
 
@@ -758,18 +743,18 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 <p>
   <table border="1">
-    <tbody align="center">
+    <tbody align="left">
       <tr>
-        <th style="text-align: center;">GTK</th>
-        <td style="text-align: left;"><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_gtk.png"></td>
+        <th>GTK</th>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_gtk.png"></td>
       </tr>
       <tr>
-        <th style="text-align: center;">Motif</th>
-	<td style="text-align: left;"><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_mot.png"></td>
+        <th>Motif</th>
+	<td><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_mot.png"></td>
       </tr>
       <tr>
-        <th style="text-align: center;">Windows</th>
-	<td style="text-align: left;"><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_win.png"></td>
+        <th>Windows</th>
+	<td><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_win.png"></td>
       </tr>
     </tbody>
   </table>
@@ -781,7 +766,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<img src="http://kmx.github.com/perl-iup/spec/iuplabel1.png">
+<p><img src="http://kmx.github.com/perl-iup/spec/iuplabel1.png"></p>
 
 =end HTML
 
@@ -897,9 +882,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/spec/iuptree1.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/spec/iuptree1.png"></p>
 
 =end HTML
 
@@ -907,9 +890,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/images/naturalsize.gif">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/images/naturalsize.gif"></p>
 
 =end HTML
 
@@ -962,8 +943,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupmatrix1.png"></p>
-<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupmatrix2.png"></p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupmatrix1.png"><br><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupmatrix2.png"></p>
 
 =end HTML
 
@@ -971,9 +951,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/images/usersize.gif">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/images/usersize.gif"></p>
 
 =end HTML
 
@@ -1023,9 +1001,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupsubmenu.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupsubmenu.png"></p>
 
 =end HTML
 
@@ -1121,10 +1097,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/getparam.png">
-</p>
-
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/getparam.png"></p>
 
 =end HTML
 
@@ -1132,9 +1105,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/images/dlg_led.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/images/dlg_led.png"></p>
 
 =end HTML
 
@@ -1142,9 +1113,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/images/no_shrink.gif">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/images/no_shrink.gif"></p>
 
 =end HTML
 
@@ -1242,9 +1211,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox_align.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox_align.png"></p>
 
 =end HTML
 
@@ -1279,9 +1246,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin HTML
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupglcanvas.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupglcanvas.png"></p>
 
 =end HTML
 
@@ -1372,9 +1337,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/listdialog.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/listdialog.png"></p>
 
 =end html
 
@@ -1420,9 +1383,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupole.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupole.png"></p>
 
 =end html
 
@@ -1455,9 +1416,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupcolorbrowser.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupcolorbrowser.png"></p>
 
 =end html
 
@@ -1486,9 +1445,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/alarm.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/alarm.png"></p>
 
 =end html
 
@@ -1534,9 +1491,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupmenu_fromsyntax.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupmenu_fromsyntax.png"></p>
 
 =end html
 
@@ -1544,9 +1499,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/gettext.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/gettext.png"></p>
 
 =end html
 
@@ -1577,22 +1530,31 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 <p>
   <table border="1">
+    <col style="background-color: rgb(236, 233, 216);">
+    <col style="background-color: rgb(173, 177, 194);">
     <tbody align="center">
       <tr>
         <th style="text-align: center;">GTK</th>
         <th style="text-align: center;">Motif</th>
       </tr>
       <tr>
-        <td style="background-color: rgb(236, 233, 216);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_gtk.png"></td>
-        <td style="background-color: rgb(173, 177, 194);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_mot.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_gtk.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_mot.png"></td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <table border="1">
+    <col style="background-color: rgb(212, 208, 200);">
+    <col style="background-color: rgb(239, 235, 231);">
+    <tbody align="center">
+      <tr>
+        <th style="text-align: center;">Windows Classic</th>
+        <th style="text-align: center;">Windows XP Style</th>
       </tr>
       <tr>
-        <th style="text-align: center;">Windows<br>Classic</th>
-        <th style="text-align: center;">Windows<br>XP Style</th>
-      </tr>
-      <tr>
-        <td style="background-color: rgb(212, 208, 200);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_win2k.png"></td>
-        <td style="background-color: rgb(239, 235, 231);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_winxp.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_win2k.png"></td>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupframe_winxp.png"></td>
       </tr>
     </tbody>
   </table>
@@ -1604,9 +1566,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/images/expand.gif">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/images/expand.gif"></p>
 
 =end html
 
@@ -1614,9 +1574,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupwebbrowser.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupwebbrowser.png"></p>
 
 =end html
 
@@ -1624,9 +1582,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/images/shrink.gif">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/images/shrink.gif"></p>
 
 =end html
 
@@ -1777,16 +1733,19 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 <p>
   <table border="1">
-    <tbody align="center">    
+    <col style="vertical-align:top;background-color: rgb(236, 233, 216);">
+    <col style="vertical-align:top;background-color: rgb(236, 233, 216);">
+    <col style="vertical-align:top;background-color: rgb(236, 233, 216);">
+    <tbody align="center">
         <tr>
 		<th>default layout</th>
 		<th>HOMOGENEOUS=YES</th>
 		<th>EXPANDCHILDREN=YES</th>
 	</tr>
 	<tr>
-		<td style="vertical-align:top;background-color: rgb(236, 233, 216);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox.png"></td>
-		<td style="vertical-align:top;background-color: rgb(236, 233, 216);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_homogeneous.png"></td>
-		<td style="vertical-align:top;background-color: rgb(236, 233, 216);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_expandchildren.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_homogeneous.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_expandchildren.png"></td>
 	</tr>
         <tr>
 		<th>default layout</th>
@@ -1794,9 +1753,9 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 		<th>child "2": VISIBLE=NO, FLOATING=YES</th>
 	</tr>
 	<tr>
-		<td style="vertical-align:top;background-color: rgb(236, 233, 216);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox.png"></td>
-		<td style="vertical-align:top;background-color: rgb(236, 233, 216);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_visible.png"></td>
-		<td style="vertical-align:top;background-color: rgb(236, 233, 216);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_floating.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_visible.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_floating.png"></td>
 	</tr>
     </tbody>
   </table>
@@ -1829,9 +1788,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/layoutdlg1.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/layoutdlg1.png"></p>
 
 =end html
 
@@ -1841,6 +1798,9 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 <p>
   <table border="1">
+    <col style="background-color: rgb(240, 240, 240);">
+    <col style="background-color: rgb(240, 240, 240);">
+    <col style="background-color: rgb(240, 240, 240);">
     <tbody align="center">    
         <tr>
 		<th>default layout</th>
@@ -1848,9 +1808,9 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 		<th>EXPANDCHILDREN=YES</th>
 	</tr>
 	<tr>
-		<td style="background-color: rgb(240, 240, 240);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox.png"></td>
-		<td style="background-color: rgb(240, 240, 240);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox_homogeneous.png"></td>
-		<td style="background-color: rgb(240, 240, 240);"><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox_expandchildren.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox_homogeneous.png"></td>
+		<td><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox_expandchildren.png"></td>
 	</tr>
     </tbody>
   </table>
@@ -1883,9 +1843,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupdial.gif">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupdial.gif"></p>
 
 =end html
 
@@ -1969,9 +1927,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/layoutdlg2.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/layoutdlg2.png"></p>
 
 =end html
 
@@ -1979,9 +1935,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupcolorbar.gif">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupcolorbar.gif"></p>
 
 =end html
 
@@ -2072,9 +2026,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupspin.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupspin.png"></p>
 
 =end html
 
@@ -2082,9 +2034,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_align.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupvbox_align.png"></p>
 
 =end html
 
@@ -2119,18 +2069,18 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 <p>
   <table border="1">
-    <tbody align="center">
+    <tbody align="left">
       <tr>
-        <th style="text-align: center;">GTK</th>
-        <td style="text-align: left;"><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_gtk.png"></td>
+        <th>GTK</th>
+        <td><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_gtk.png"></td>
       </tr>
       <tr>
-        <th style="text-align: center;">Motif</th>
-	<td style="text-align: left;"><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_mot.png"></td>
+        <th>Motif</th>
+	<td><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_mot.png"></td>
       </tr>
       <tr>
-        <th style="text-align: center;">Windows</th>
-	<td style="text-align: left;"><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_win.png"></td>
+        <th>Windows</th>
+	<td><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/filedlg_win.png"></td>
       </tr>
     </tbody>
   </table>
@@ -2142,7 +2092,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<img src="http://kmx.github.com/perl-iup/spec/iuplabel1.png">
+<p><img src="http://kmx.github.com/perl-iup/spec/iuplabel1.png"></p>
 
 =end html
 
@@ -2258,9 +2208,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/spec/iuptree1.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/spec/iuptree1.png"></p>
 
 =end html
 
@@ -2268,9 +2216,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/images/naturalsize.gif">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/images/naturalsize.gif"></p>
 
 =end html
 
@@ -2323,8 +2269,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupmatrix1.png"></p>
-<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupmatrix2.png"></p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupmatrix1.png"><br><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupmatrix2.png"></p>
 
 =end html
 
@@ -2332,9 +2277,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/images/usersize.gif">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/images/usersize.gif"></p>
 
 =end html
 
@@ -2384,9 +2327,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupsubmenu.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iupsubmenu.png"></p>
 
 =end html
 
@@ -2482,10 +2423,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/dlg/getparam.png">
-</p>
-
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/dlg/getparam.png"></p>
 
 =end html
 
@@ -2493,9 +2431,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/images/dlg_led.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/images/dlg_led.png"></p>
 
 =end html
 
@@ -2503,9 +2439,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/images/no_shrink.gif">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/images/no_shrink.gif"></p>
 
 =end html
 
@@ -2603,9 +2537,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox_align.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/elem/iuphbox_align.png"></p>
 
 =end html
 
@@ -2640,9 +2572,7 @@ $txt->SetAttribute( ADDFORMATTAG_HANDLE => IUP::User->new(
 
 =begin html
 
-<p>
-<img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupglcanvas.png">
-</p>
+<p><img src="http://kmx.github.com/perl-iup/img-3.5/ctrl/iupglcanvas.png"></p>
 
 =end html
 
