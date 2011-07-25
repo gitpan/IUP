@@ -40,10 +40,10 @@ L<IUP::Canvas|IUP::Canvas> to implement the bar handler. XXX-check-this
 =head2 CREATION - new() method
 
  #standard way
- my $sbox = IUP::Sbox->new( child=>[$elem1, $elem2], ANYATTRIBUTE=>'XXX' );
+ my $sbox = IUP::Sbox->new( child=>[$elem1, $elem2], ANYATTRIBUTE=>'any value' );
  
  #or with just a single child
- my $sbox = IUP::Sbox->new( child=>$elem, ANYATTRIBUTE=>'XXX' );
+ my $sbox = IUP::Sbox->new( child=>$elem, ANYATTRIBUTE=>'any value' );
  
  #or with just 1 parameter (arrayref)
  my $sbox = IUP::Sbox->new( [$elem1, $elem2] );
@@ -135,9 +135,9 @@ The element B<IUP::Sbox> is used in the following sample scripts:
 
 =over
 
-=item * L<0-basic/sbox1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_13/examples/0-basic/sbox1.pl> - IUP::Sbox example
+=item * L<0-basic/sbox1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/sbox1.pl> - IUP::Sbox example
 
-=item * L<0-basic/sbox2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_13/examples/0-basic/sbox2.pl> - IUP::Sbox example
+=item * L<0-basic/sbox2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/sbox2.pl> - IUP::Sbox example
 
 =back 
 

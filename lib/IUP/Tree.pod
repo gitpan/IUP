@@ -495,13 +495,12 @@ The user data associated with the specified node. (since iup-3.0)
 
 =item * B<IMAGE(id)>
 
-Image name to be used in the specified node, where id is
+Image name or reference to L<IUP::Image> to be used in the specified node, where id is
 the specified node identifier. If id is empty, then the focus node is
 used as the specified node. 
-XXX-check-this Use L<SetName|IUP::Manual::02_Elements/"SetName()"> 
-XXX-check-this or XXX-FIX_ME to
-XXX-check-this associate an image to a name. 
-See also L<IUP::Image|IUP::Image>. 
+
+See - L<Using Images in Other Elements (via IMAGE Attribute)|IUP::Image/"Using Images in Other Elements (via IMAGE Attribute)">
+
 In Windows and Motif set the BGCOLOR attribute before setting the image.
 If node is a branch it is used when collapsed.
 
@@ -1309,17 +1308,17 @@ The element B<IUP::Tree> is used in the following sample scripts:
 
 =over
 
-=item * L<0-basic/cbox.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_13/examples/0-basic/cbox.pl> - IUP::Cbox example
+=item * L<0-basic/cbox.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/cbox.pl> - IUP::Cbox example
 
-=item * L<0-basic/sbox2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_13/examples/0-basic/sbox2.pl> - IUP::Sbox example
+=item * L<0-basic/sbox2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/sbox2.pl> - IUP::Sbox example
 
-=item * L<0-basic/tree1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_13/examples/0-basic/tree1.pl> - IUP::Tree example (animals) - using helper methods e.g. TreeAddNodes()
+=item * L<0-basic/tree1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/tree1.pl> - IUP::Tree example (animals) - using helper methods e.g. TreeAddNodes()
 
-=item * L<0-basic/tree2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_13/examples/0-basic/tree2.pl> - IUP::Tree example (figures) - using attribute only interface
+=item * L<0-basic/tree2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/tree2.pl> - IUP::Tree example (figures) - using attribute only interface
 
-=item * L<0-basic/tree3.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_13/examples/0-basic/tree3.pl> - IUP::Tree example (figures) - using attribute only interface
+=item * L<0-basic/tree3.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/tree3.pl> - IUP::Tree example (figures) - using attribute only interface
 
-=item * L<0-basic/tree_set_attrs.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_13/examples/0-basic/tree_set_attrs.pl> - IUP::Tree example (attributes)
+=item * L<0-basic/tree_set_attrs.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/tree_set_attrs.pl> - IUP::Tree example (attributes)
 
 =back 
 
