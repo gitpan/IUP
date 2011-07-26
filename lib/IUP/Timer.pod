@@ -6,8 +6,8 @@ IUP::Timer - [special] periodicaly invokes a callback when the time is up
 
 =head1 DESCRIPTION
 
-Creates a timer which periodicaly invokes a callback when the time is
-up. Each timer should be destroyed using L<Destroy|IUP::Manual::02_Elements/"Destroy()"> (XXX-more-perlish C<undef $timer>).
+Creates a timer which periodicaly invokes a callback when the time is up.
+Each timer should be destroyed using L<Destroy|IUP::Manual::02_Elements/"Destroy()"> (or simply by C<undef $timer>).
 
 =head1 USAGE
 
@@ -80,11 +80,11 @@ The element B<IUP::Timer> is used in the following sample scripts:
 
 =over
 
-=item * L<0-basic/glcanvas2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/glcanvas2.pl> - IUP::CanvasGL example
+=item * L<0-basic/glcanvas2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_15/examples/0-basic/glcanvas2.pl> - IUP::CanvasGL example
 
-=item * L<0-basic/progressbar2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/progressbar2.pl> - IUP::ProgressBar example
+=item * L<0-basic/progressbar2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_15/examples/0-basic/progressbar2.pl> - IUP::ProgressBar example
 
-=item * L<0-basic/timer.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/timer.pl> - IUP::Timer example
+=item * L<0-basic/timer.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_15/examples/0-basic/timer.pl> - IUP::Timer example
 
 =back 
 

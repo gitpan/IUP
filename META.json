@@ -55,7 +55,7 @@
    "provides" : {
       "IUP" : {
          "file" : "lib/IUP.pm",
-         "version" : "0.001_14"
+         "version" : "0.001_15"
       },
       "IUP::Button" : {
          "file" : "lib/IUP/Button.pm",
@@ -278,5 +278,5 @@
          "url" : "https://github.com/kmx/perl-iup"
       }
    },
-   "version" : "0.001_14"
+   "version" : "0.001_15"
 }

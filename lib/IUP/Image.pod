@@ -125,8 +125,6 @@ different elements.
 The images should be destroyed when they are no longer necessary, by
 means of the L<Destroy|IUP::Manual::02_Elements/"Destroy()"> function. To destroy an image, it cannot be
 in use, i.e the controls where it is used should be destroyed first.
-Images that were associated with controls by names are automatically
-destroyed in B<IUP::Close> XXX-iup-close-XXX.
 
 Please observe the rules for creating cursor images: L<CURSOR|IUP::Manual::03_Attributes/CURSOR>.
 
@@ -168,15 +166,12 @@ The alternative approach to load an image from file is:
 Which internally uses L<im library|http://www.tecgraf.puc-rio.br/im/> to load the image
 and supports the given set of image formats (BMP PCX GIF TIFF SGI JPEG TGA ICO PNG PPM PBM PNM PGM LED) B<on all drivers>.
 
-B<XXX-check-this---probably-not-relevant-for-perl-XXX>
 In Windows, names of resources in RC files linked with the application
-are also accepted. In GTK, names of GTK Stock Items are also accepted.
+are also accepted (not true for perl IUP bindings). In GTK, names of GTK Stock Items are also accepted.
 In Motif, names of bitmaps installed on the system are also accepted.
 For example:
 
  $label->IUP::Label->new();
- $label->SetAttribute( IMAGE=>"TECGRAF_BITMAP" );  #available in the "etc/iup.rc" file
- #or
  $label->SetAttribute( IMAGE=>"gtk-open");  # available in the GTK Stock Items
 
 =head2 Using Colors
@@ -291,27 +286,27 @@ The element B<IUP::Image> is used in the following sample scripts:
 
 =over
 
-=item * L<0-basic/button.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/button.pl> - IUP::Button example
+=item * L<0-basic/button.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_15/examples/0-basic/button.pl> - IUP::Button example
 
-=item * L<0-basic/cbox.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/cbox.pl> - IUP::Cbox example
+=item * L<0-basic/cbox.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_15/examples/0-basic/cbox.pl> - IUP::Cbox example
 
-=item * L<0-basic/dialog2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/dialog2.pl> - IUP::Dialog example
+=item * L<0-basic/dialog2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_15/examples/0-basic/dialog2.pl> - IUP::Dialog example
 
-=item * L<0-basic/image.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/image.pl> - IUP::Image example
+=item * L<0-basic/image.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_15/examples/0-basic/image.pl> - IUP::Image example
 
-=item * L<0-basic/label.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/label.pl> - IUP::Label example
+=item * L<0-basic/label.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_15/examples/0-basic/label.pl> - IUP::Label example
 
-=item * L<0-basic/progressbar2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/progressbar2.pl> - IUP::ProgressBar example
+=item * L<0-basic/progressbar2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_15/examples/0-basic/progressbar2.pl> - IUP::ProgressBar example
 
-=item * L<0-basic/progressbar3.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/progressbar3.pl> - IUP::ProgressBar example
+=item * L<0-basic/progressbar3.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_15/examples/0-basic/progressbar3.pl> - IUP::ProgressBar example
 
-=item * L<0-basic/toggle.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/toggle.pl> - IUP::Toggle example
+=item * L<0-basic/toggle.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_15/examples/0-basic/toggle.pl> - IUP::Toggle example
 
-=item * L<0-basic/tray.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/0-basic/tray.pl> - IUP::Dialog + TRAY / TRAYTIP / TRAYIMAGE example
+=item * L<0-basic/tray.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_15/examples/0-basic/tray.pl> - IUP::Dialog + TRAY / TRAYTIP / TRAYIMAGE example
 
-=item * L<1-apps/app-mdi.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/1-apps/app-mdi.pl> - IUP app example
+=item * L<1-apps/app-mdi.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_15/examples/1-apps/app-mdi.pl> - IUP app example
 
-=item * L<1-apps/app-sample2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_14/examples/1-apps/app-sample2.pl> - example based on the original sample.c
+=item * L<1-apps/app-sample2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.001_15/examples/1-apps/app-sample2.pl> - example based on the original sample.c
 
 =back 
 
