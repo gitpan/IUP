@@ -36,7 +36,7 @@ name: IUP
 provides:
   IUP:
     file: lib/IUP.pm
-    version: 0.001_16
+    version: 0.001_17
   IUP::Button:
     file: lib/IUP/Button.pm
     version: 0
@@ -200,4 +200,4 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Status=Active&Name=IUP
   license: http://www.opensource.org/licenses/mit-license.php
   repository: https://github.com/kmx/perl-iup
-version: 0.001_16
+version: 0.001_17
