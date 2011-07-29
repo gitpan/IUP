@@ -15,6 +15,9 @@
 ######## IMPORTANT:
 - imglib - Other: B<NOTE:> NOT included in the pre-compiled library XXX-FIXME
 
+######## IMPORTANT: par packer
+- mention PAR packing recommendation in DOC
+
 ######## MAYBE: access child=>[...] items like this
  $mybox = IUP::Hbox->new( child=>[ $bt1, $bt2, $bt3] );
  #XXX-FIXME THIS DOES NOT WORK IN PERL-XXX
