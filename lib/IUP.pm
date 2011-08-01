@@ -4,13 +4,12 @@ use strict;
 use warnings;
 
 use Carp;
-use Data::Dumper;
 
 use IUP::Internal::LibraryIup;
 use IUP::Constants;
 
 # following recommendation from http://www.dagolden.com/index.php/369/version-numbers-should-be-boring/
-our $VERSION = "0.002";
+our $VERSION = "0.002_01";
 $VERSION = eval $VERSION;
 
 sub BEGIN {
