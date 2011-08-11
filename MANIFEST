@@ -1,5 +1,6 @@
 Build.PL
 Changes
+dkbhc.s
 examples/0-basic/alarm.pl
 examples/0-basic/button.pl
 examples/0-basic/canvas1.pl
@@ -89,8 +90,12 @@ lib/IUP/Button.pm
 lib/IUP/Button.pod
 lib/IUP/Canvas.pm
 lib/IUP/Canvas.pod
+lib/IUP/Canvas/Bitmap.pod
 lib/IUP/Canvas/EMF.pm
 lib/IUP/Canvas/EMF.pod
+lib/IUP/Canvas/Palette.pod
+lib/IUP/Canvas/Pattern.pod
+lib/IUP/Canvas/Stipple.pod
 lib/IUP/Canvas/SVG.pm
 lib/IUP/Canvas/SVG.pod
 lib/IUP/CanvasGL.pm
