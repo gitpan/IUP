@@ -1,6 +1,5 @@
 Build.PL
 Changes
-dkbhc.s
 examples/0-basic/alarm.pl
 examples/0-basic/button.pl
 examples/0-basic/canvas1.pl
