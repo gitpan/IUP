@@ -55,7 +55,7 @@
    "provides" : {
       "IUP" : {
          "file" : "lib/IUP.pm",
-         "version" : "0.002_07"
+         "version" : "0.002_08"
       },
       "IUP::Button" : {
          "file" : "lib/IUP/Button.pm",
@@ -73,6 +73,14 @@
          "file" : "lib/IUP/Canvas/EMF.pm",
          "version" : 0
       },
+      "IUP::Canvas::FileBitmap" : {
+         "file" : "lib/IUP/Canvas/FileBitmap.pm",
+         "version" : 0
+      },
+      "IUP::Canvas::FileVector" : {
+         "file" : "lib/IUP/Canvas/FileVector.pm",
+         "version" : 0
+      },
       "IUP::Canvas::InternalServerImage" : {
          "file" : "lib/IUP/Canvas.pm",
          "version" : 0
@@ -83,10 +91,6 @@
       },
       "IUP::Canvas::Pattern" : {
          "file" : "lib/IUP/Canvas.pm",
-         "version" : 0
-      },
-      "IUP::Canvas::SVG" : {
-         "file" : "lib/IUP/Canvas/SVG.pm",
          "version" : 0
       },
       "IUP::Canvas::Stipple" : {
@@ -298,5 +302,5 @@
          "url" : "https://github.com/kmx/perl-iup"
       }
    },
-   "version" : "0.002_07"
+   "version" : "0.002_08"
 }

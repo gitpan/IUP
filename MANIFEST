@@ -91,12 +91,13 @@ lib/IUP/Canvas.pm
 lib/IUP/Canvas.pod
 lib/IUP/Canvas/Bitmap.pod
 lib/IUP/Canvas/EMF.pm
-lib/IUP/Canvas/EMF.pod
+lib/IUP/Canvas/FileBitmap.pm
+lib/IUP/Canvas/FileBitmap.pod
+lib/IUP/Canvas/FileVector.pm
+lib/IUP/Canvas/FileVector.pod
 lib/IUP/Canvas/Palette.pod
 lib/IUP/Canvas/Pattern.pod
 lib/IUP/Canvas/Stipple.pod
-lib/IUP/Canvas/SVG.pm
-lib/IUP/Canvas/SVG.pod
 lib/IUP/CanvasGL.pm
 lib/IUP/CanvasGL.pod
 lib/IUP/Cbox.pm

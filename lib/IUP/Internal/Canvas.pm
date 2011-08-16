@@ -19,6 +19,8 @@ sub cnvhandle {
 sub new_from_cnvhandle {
   my ($class, $ch) = @_;
   my $self = { class => $class };
+  
+  return undef unless($ch); #XXX-CHECKLATER
   bless($self, $class);
   $self->cnvhandle($ch);
   return $self;
@@ -32,8 +34,8 @@ sub cdKillCanvas {
 
 sub DESTROY {
   my $self = shift;
-  #xxxFIXME handle correctly canvas destruction
-  #$self->cdKillCanvas;  
+  #XXX-CHECKLATER not sure if we handle correctly canvas destruction
+  $self->cdKillCanvas;  
   #warn "XXX-DEBUG: IUP::Internal::Canvas::DESTROY(): " . ref($_[0]) . " [" . $_[0]->cnvhandle . "]\n";  
 }
 
