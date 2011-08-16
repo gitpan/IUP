@@ -41,7 +41,7 @@
       },
       "configure" : {
          "requires" : {
-            "Alien::IUP" : 0,
+            "Alien::IUP" : "0.303",
             "Module::Build" : 0
          }
       },
@@ -55,7 +55,7 @@
    "provides" : {
       "IUP" : {
          "file" : "lib/IUP.pm",
-         "version" : "0.002_08"
+         "version" : "0.002_09"
       },
       "IUP::Button" : {
          "file" : "lib/IUP/Button.pm",
@@ -302,5 +302,5 @@
          "url" : "https://github.com/kmx/perl-iup"
       }
    },
-   "version" : "0.002_08"
+   "version" : "0.002_09"
 }
