@@ -90,7 +90,6 @@ lib/IUP/Button.pod
 lib/IUP/Canvas.pm
 lib/IUP/Canvas.pod
 lib/IUP/Canvas/Bitmap.pod
-lib/IUP/Canvas/EMF.pm
 lib/IUP/Canvas/FileBitmap.pm
 lib/IUP/Canvas/FileBitmap.pod
 lib/IUP/Canvas/FileVector.pm

@@ -55,7 +55,7 @@
    "provides" : {
       "IUP" : {
          "file" : "lib/IUP.pm",
-         "version" : "0.002_09"
+         "version" : "0.002_10"
       },
       "IUP::Button" : {
          "file" : "lib/IUP/Button.pm",
@@ -67,10 +67,6 @@
       },
       "IUP::Canvas::Bitmap" : {
          "file" : "lib/IUP/Canvas.pm",
-         "version" : 0
-      },
-      "IUP::Canvas::EMF" : {
-         "file" : "lib/IUP/Canvas/EMF.pm",
          "version" : 0
       },
       "IUP::Canvas::FileBitmap" : {
@@ -302,5 +298,5 @@
          "url" : "https://github.com/kmx/perl-iup"
       }
    },
-   "version" : "0.002_09"
+   "version" : "0.002_10"
 }
