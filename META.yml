@@ -36,7 +36,7 @@ name: IUP
 provides:
   IUP:
     file: lib/IUP.pm
-    version: 0.002_11
+    version: 0.002_12
   IUP::Button:
     file: lib/IUP/Button.pm
     version: 0
@@ -51,12 +51,6 @@ provides:
     version: 0
   IUP::Canvas::FileVector:
     file: lib/IUP/Canvas/FileVector.pm
-    version: 0
-  IUP::Canvas::InternalServerImage:
-    file: lib/IUP/Canvas.pm
-    version: 0
-  IUP::Canvas::InternalState:
-    file: lib/IUP/Canvas.pm
     version: 0
   IUP::Canvas::Palette:
     file: lib/IUP/Canvas.pm
@@ -218,4 +212,4 @@ resources:
   bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=IUP
   license: http://www.opensource.org/licenses/mit-license.php
   repository: https://github.com/kmx/perl-iup
-version: 0.002_11
+version: 0.002_12

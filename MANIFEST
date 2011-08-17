@@ -83,6 +83,7 @@ examples/1-apps/app-sample2.pl
 examples/1-apps/app-simple-demo.pl
 examples/1-apps/app-using-LED.pl
 examples/1-apps/sample.led
+examples/2-canvas/simpledraw.pl
 lib/IUP.pm
 lib/IUP.pod
 lib/IUP/Button.pm
