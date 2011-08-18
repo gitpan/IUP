@@ -55,7 +55,7 @@
    "provides" : {
       "IUP" : {
          "file" : "lib/IUP.pm",
-         "version" : "0.002_13"
+         "version" : "0.003"
       },
       "IUP::Button" : {
          "file" : "lib/IUP/Button.pm",
@@ -282,7 +282,7 @@
          "version" : 0
       }
    },
-   "release_status" : "testing",
+   "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
          "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=IUP"
@@ -294,5 +294,5 @@
          "url" : "https://github.com/kmx/perl-iup"
       }
    },
-   "version" : "0.002_13"
+   "version" : "0.003"
 }
