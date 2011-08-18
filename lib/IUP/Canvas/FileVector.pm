@@ -6,12 +6,13 @@ use IUP::Internal::LibraryIup;
 use Carp;
 
 sub new {
-  my ($self, %args) = @_;
+  my ($class, %args) = @_;
   my $format = $args{format};
   my $filename = $args{filename};
   my $width = $args{width};
   my $height = $args{height};
   my $resolution = $args{resolution};
+  my $dpi = $args{dpi};
   
   my $ch;
   if (!$filename) {
@@ -29,11 +30,18 @@ sub new {
   elsif ((defined $width && !defined $height) || (!defined $width && defined $height)) {
     carp "warning: none or both height and width parameters have to be defined for ".__PACKAGE__."->new()";
   }
+  elsif (defined $dpi && defined $resolution) {
+    carp "warning: you cannot define both 'resolution' and 'dpi' parameters for ".__PACKAGE__."->new()";
+  }
   elsif (defined $resolution && $resolution<0) {
     carp "warning: resolution parameter is '<=0' for ".__PACKAGE__."->new()";
   }
+  elsif (defined $dpi && $dpi<0) {
+    carp "warning: dpi parameter is '<=0' for ".__PACKAGE__."->new()";        
+  }
   else {
     my $init;
+    $resolution = $dpi/25.4 if defined $dpi;
     if ($format eq 'PS') { # http://www.tecgraf.puc-rio.br/cd/en/drv/ps.html
         # "filename -p[paper] -w[width] -h[height] -l[left] -r[right] -b[bottom] -t[top] -s[resolution] [-e] [-g] [-o] [-1] -d[margin]"
         # "%s -p%d -w%g -h%g -l%g -r%g -b%g -t%g -s%d -e -o -1 -g -d%g"        
@@ -56,6 +64,7 @@ sub new {
         # "%s %gx%g %g"
         $init = $filename;
         $init .= sprintf(" %gx%g", $width, $height) if defined $width && defined $height;
+        $init .= sprintf(" %g", $resolution) if defined $resolution;
     }
     elsif ($format eq 'CGM') { # http://www.tecgraf.puc-rio.br/cd/en/drv/cgm.html
         # "filename [widthxheight] [resolution] [-t] -p[precision]"
@@ -124,7 +133,7 @@ sub new {
       if ($init ne '') {
         $init .= " $args{raw}"  if defined $args{raw};
         #warn "XXX-DEBUG: type='$format' init='$init'\n";
-        $ch = $self->new_from_cnvhandle(IUP::Internal::Canvas::_cdCreateCanvas_BASIC($format, $init));
+        $ch = $class->new_from_cnvhandle(IUP::Internal::Canvas::_cdCreateCanvas_BASIC($format, $init));
       }
     }
     else {

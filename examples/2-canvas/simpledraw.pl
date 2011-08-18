@@ -5,6 +5,7 @@ use warnings;
 
 use IUP ':all';
 use IUP::Canvas::FileVector;
+use IUP::Canvas::FileBitmap;
 
 ###global variables
 
@@ -21,12 +22,12 @@ sub InitGlobals {
 
   $pattern = IUP::Canvas::Pattern->new( [
     [CD_RED,  CD_RED,  CD_RED,  CD_RED,  CD_RED,  CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE],
+    [CD_RED,  CD_RED,  CD_RED,  CD_RED,  CD_RED,  CD_BLUE, CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE],
+    [CD_RED,  CD_RED,  CD_RED,  CD_RED,  CD_RED,  CD_BLUE, CD_BLUE, CD_WHITE,CD_WHITE,CD_WHITE],
     [CD_RED,  CD_RED,  CD_RED,  CD_RED,  CD_RED,  CD_BLUE, CD_BLUE, CD_BLUE, CD_WHITE,CD_WHITE],
     [CD_RED,  CD_RED,  CD_RED,  CD_RED,  CD_RED,  CD_BLUE, CD_BLUE, CD_BLUE, CD_WHITE,CD_WHITE],
-    [CD_RED,  CD_RED,  CD_RED,  CD_RED,  CD_RED,  CD_BLUE, CD_BLUE, CD_BLUE, CD_WHITE,CD_WHITE],
-    [CD_RED,  CD_RED,  CD_RED,  CD_RED,  CD_RED,  CD_BLUE, CD_BLUE, CD_BLUE, CD_WHITE,CD_WHITE],
-    [CD_WHITE,CD_GREEN,CD_GREEN,CD_GREEN,CD_GREEN,CD_GREEN,CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE],
-    [CD_WHITE,CD_WHITE,CD_GREEN,CD_GREEN,CD_GREEN,CD_GREEN,CD_GREEN,CD_WHITE,CD_WHITE,CD_WHITE],
+    [CD_WHITE,CD_GREEN,CD_GREEN,CD_GREEN,CD_GREEN,CD_GREEN,CD_BLUE, CD_BLUE, CD_WHITE,CD_WHITE],
+    [CD_WHITE,CD_WHITE,CD_GREEN,CD_GREEN,CD_GREEN,CD_GREEN,CD_GREEN,CD_BLUE, CD_WHITE,CD_WHITE],
     [CD_WHITE,CD_WHITE,CD_WHITE,CD_GREEN,CD_GREEN,CD_GREEN,CD_GREEN,CD_GREEN,CD_WHITE,CD_WHITE],  
     [CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE],
     [CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE,CD_WHITE],
@@ -61,6 +62,7 @@ sub InitGlobals {
 
 sub SimpleDraw {
   my $canvas = shift;
+  my ($x0, $y0, $x1, $y1, $x2, $y2, $x3, $y3);
   
   # Get size in pixels to be used for computing coordinates.
   my ($w, $h, $w_mm, $h_mm) = $canvas->cdGetSize();
@@ -125,35 +127,35 @@ sub SimpleDraw {
   # Draw text at center, with orientation,
   # and draw its bounding box.
   # Notice that in some drivers the bounding box is not precise.
-  my $irect = $canvas->cdGetTextBounds($w/2, $h/2, "cdMin Draw (згн)");
+  ($x0, $y0, $x1, $y1, $x2, $y2, $x3, $y3) = $canvas->cdGetTextBounds($w/2, $h/2, "cdMin Draw (згн)");
   $canvas->cdForeground(CD_RED);
   $canvas->cdBegin(CD_CLOSED_LINES);
-  $canvas->cdVertex($irect->[0], $irect->[1]);
-  $canvas->cdVertex($irect->[2], $irect->[3]);
-  $canvas->cdVertex($irect->[4], $irect->[5]);
-  $canvas->cdVertex($irect->[6], $irect->[7]);
+  $canvas->cdVertex($x0, $y0);
+  $canvas->cdVertex($x1, $y1);
+  $canvas->cdVertex($x2, $y2);
+  $canvas->cdVertex($x3, $y3);
   $canvas->cdEnd();
   $canvas->cdForeground(CD_BLUE);
   $canvas->cdText($w/2, $h/2, "cdMin Draw (згн)");
 
   # Prepare World Coordinates
-  $canvas->cdwViewport(0,$w-1,0,$h-1);
+  $canvas->wdViewport(0,$w-1,0,$h-1);
   if ($w>$h) {
-      $canvas->cdwWindow(0,$w/$h,0,1);
+      $canvas->wdWindow(0,$w/$h,0,1);
   }
   else {
-      $canvas->cdwWindow(0,1,0,$h/$w);
+      $canvas->wdWindow(0,1,0,$h/$w);
   }
 
   # Draw a filled blue rectangle in WC
-  $canvas->cdwBox(0.20, 0.30, 0.40, 0.50);
+  $canvas->wdBox(0.20, 0.30, 0.40, 0.50);
   $canvas->cdForeground(CD_RED);
 
   # Draw the diagonal of that rectangle in WC
-  $canvas->cdwLine(0.20, 0.40, 0.30, 0.50);
+  $canvas->wdLine(0.20, 0.40, 0.30, 0.50);
 
   # Prepare Vector Text in WC.
-  $canvas->cdwVectorCharSize(0.07);
+  $canvas->wdVectorCharSize(0.07);
 
   # Draw vector text, and draw its bounding box.
   # We also use this text to show when we are using a contextplus driver.
@@ -161,24 +163,24 @@ sub SimpleDraw {
   my $drect;
   my $contextplus; #XXX-TODO
   if ($contextplus) {
-      $drect = $canvas->cdwGetVectorTextBounds("WDj-Plus", 0.25, 0.35);
+      ($x0, $y0, $x1, $y1, $x2, $y2, $x3, $y3) = $canvas->wdGetVectorTextBounds("WDj-Plus", 0.25, 0.35);
   }
   else {
-      $drect = $canvas->cdwGetVectorTextBounds("WDj", 0.25, 0.35);
+      ($x0, $y0, $x1, $y1, $x2, $y2, $x3, $y3) = $canvas->wdGetVectorTextBounds("WDj", 0.25, 0.35);
   }
   $canvas->cdBegin(CD_CLOSED_LINES);
-  $canvas->cdwVertex($drect->[0], $drect->[1]);
-  $canvas->cdwVertex($drect->[2], $drect->[3]);
-  $canvas->cdwVertex($drect->[4], $drect->[5]);
-  $canvas->cdwVertex($drect->[6], $drect->[7]);
+  $canvas->wdVertex($x0, $y0);
+  $canvas->wdVertex($x1, $y1);
+  $canvas->wdVertex($x2, $y2);
+  $canvas->wdVertex($x3, $y3);
   $canvas->cdEnd();
   $canvas->cdLineWidth(2);
   $canvas->cdLineStyle(CD_CONTINUOUS);
   if ($contextplus) {
-      $canvas->cdwVectorText(0.25, 0.35, "WDj-Plus");
+      $canvas->wdVectorText(0.25, 0.35, "WDj-Plus");
   }
   else {
-      $canvas->cdwVectorText(0.25, 0.35, "WDj");
+      $canvas->wdVectorText(0.25, 0.35, "WDj");
   }
 
   # Reset line width
@@ -308,7 +310,7 @@ sub SimpleDraw {
   $canvas->cdEnd();
 
   # Draw the image on the top-right corner but increasing its actual size, and uses its full area
-  $canvas->cdPutBitmap($imagergba, $w - 400, $h - 310, 3*$IMAGE_SIZE, 3*$IMAGE_SIZE, 0, 0, 0, 0);
+  $canvas->cdPutBitmap($imagergba, $w - 400, $h - 310, 3*$IMAGE_SIZE, 3*$IMAGE_SIZE);
 
   # Adds a new page, or
   # flushes the file, or
@@ -319,8 +321,25 @@ sub SimpleDraw {
 
 ###main program
 
-my $canvas = IUP::Canvas::FileVector->new( format=>"SVG", filename=>"cd_svg.svg", 
-                                           width=>270.933, height=>198.543, resolution=>4.72441 );
+my $canvas;
 InitGlobals();
+
+warn "Saving ...\n";
+$canvas = IUP::Canvas::FileVector->new( format=>"SVG", filename=>"tmp-testoutput.svg", width=>270.933, height=>198.543, dpi=>120 );
 SimpleDraw($canvas);
-$canvas->cdKill(); #important for file based drivers to close the file.
+#$canvas->cdKillCanvas(); 
+#$canvas->DESTROY(); 
+undef $canvas; #XXX-FIXME why we need 'undef $canvas' and '$canvas->cdKillCanvas()' is not enough?
+
+warn "Saving ...\n";
+$canvas = IUP::Canvas::FileVector->new( format=>"EMF", filename=>"tmp-testoutput.emf", width=>1280, height=>938 );
+SimpleDraw($canvas);
+undef $canvas;
+
+warn "Saving ...\n";
+$canvas = IUP::Canvas::FileBitmap->new( width=>1280, height=>938, dpi=>120 );
+SimpleDraw($canvas);
+$canvas->cdDumpBitmap("tmp-testoutput.png", "PNG");
+undef $canvas;
+
+warn "Done!\n";

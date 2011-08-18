@@ -550,7 +550,7 @@ Note: operation XOR is very useful, because, using white as the
 foreground color and drawing the same image twice, you can go back to
 the original color, before the drawing. This is commonly used for mouse
 selection feedback.
-
+ 
 =head2 Methods - Color Coding
 
 The library's color system is RGB. In order to simplify some functions,
@@ -1771,14 +1771,14 @@ and C<undef> for the others.
 
 =head3 cdGetTextBounds()
  
- $rect = $canvas->cdGetTextBounds($x, $y, $text);
- $rect = $canvas->wdGetTextBounds($x, $y, $text);
+ 
+ ($x0,$y0,$x1,$y1,$x2,$y2,$x3,$y3) = $canvas->cdGetTextBounds($x, $y, $text);
+ ($x0,$y0,$x1,$y1,$x2,$y2,$x3,$y3) = $canvas->wdGetTextBounds($x, $y, $text);
 
 Returns the oriented bounding rectangle occupied by a text at a given
 position. The rectangle has the same dimentions returned by 
 L<cdGetTextSize|/"cdGetTextSize()">. The rectangle corners are returned in counter-clock wise
-order starting with the bottom left corner, arranged
-[x0,y0,x1,y1,x2,y2,x3,y3].
+order starting with the bottom left corner, arranged [x0,y0,x1,y1,x2,y2,x3,y3].
 
 =head3 cdGetTextBox()
 
@@ -1910,14 +1910,13 @@ and C<undef> for the others.
 
 =head3 cdGetVectorTextBounds()
  
- $rect = $canvas->cdGetVectorTextBounds($text, $x, $y);
- $rect = $canvas->wdGetVectorTextBounds($text, $x, $y);
+ ($x0,$y0,$x1,$y1,$x2 $y2,$x3,$y3) = $canvas->cdGetVectorTextBounds($text, $x, $y);
+ ($x0,$y0,$x1,$y1,$x2,$y2,$x3,$y3) = $canvas->wdGetVectorTextBounds($text, $x, $y);
 
 Returns the oriented bounding rectangle occupied by a text at a given
 position. The rectangle has the same dimentions returned by 
 L<cdGetVectorTextSize|/"cdGetVectorTextSize()">. The rectangle corners are returned in counter-clock
-wise order starting with the bottom left corner, arranged
-(x0,y0,x1,y1,x2,y2,x3,y3).
+wise order starting with the bottom left corner, arranged (x0,y0,x1,y1,x2,y2,x3,y3).
 
 =head3 cdGetVectorTextBox()
  
@@ -1967,10 +1966,7 @@ are available via L<IUP::Canvas::Bitmap>.
 
  $bmp = IUP::Canvas::Bitmap->new('file.png');
  $canvas->cdPutBitmap($bmp,$x,$y,$w,$h);
-
-=head3 wdPutBitmap()
-
- $bmp = IUP::Canvas::Bitmap->new('file.png');
+ #or
  $canvas->wdPutBitmap($bmp,$x,$y,$w,$h);
 
 Draws the image in the position (x,y), changing the scale. It
@@ -2034,11 +2030,7 @@ image structure (when the image is created).
  $image = $canvas->cdGetImage($x, $y, $w, $h);
  #NOTE: $image has to be a reference to 'internal-ServerImage' object
  $canvas->cdPutImage($image, $x, $y, $xmin, $xmax, $ymin, $ymax); 
-
-=head3 wdPutImage
-
- $image = $canvas->cdGetImage($x, $y, $w, $h);
- #NOTE: $image has to be a reference to 'internal-ServerImage' object
+ #or
  $canvas->wdPutImage($image, $x, $y, $xmin, $xmax, $ymin, $ymax);
 
 Copies an B<image> (stored via L<cdGetImage|/"cdGetImage()">)
@@ -2275,6 +2267,13 @@ handle can not be retained, the drawing can only be done again after a
 B< cdCanvasActivate>. On some drivers will simply call
 L<cdFlush|/cdFlush()">.
 
+=head3 cdKillCanvas()
+
+  $canvas->cdKillCanvas();
+
+Destroys a previously created canvas. There is no need to call this function
+in perl, as the garbage collector will call it automatically during DESTROY().
+
 =head3 cdUseContextPlus()
 
  $old_use = IUP::Canvas->cdUseContextPlus();
@@ -2361,27 +2360,27 @@ The element B<IUP::Canvas> is used in the following sample scripts:
 
 =over
 
-=item * L<0-basic/canvas1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_12/examples/0-basic/canvas1.pl> - IUP::Canvas example
+=item * L<0-basic/canvas1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_13/examples/0-basic/canvas1.pl> - IUP::Canvas example
 
-=item * L<0-basic/canvas2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_12/examples/0-basic/canvas2.pl> - IUP::Canvas example
+=item * L<0-basic/canvas2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_13/examples/0-basic/canvas2.pl> - IUP::Canvas example
 
-=item * L<0-basic/canvas3.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_12/examples/0-basic/canvas3.pl> - IUP::Canvas example
+=item * L<0-basic/canvas3.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_13/examples/0-basic/canvas3.pl> - IUP::Canvas example
 
-=item * L<0-basic/cbox.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_12/examples/0-basic/cbox.pl> - IUP::Cbox example
+=item * L<0-basic/cbox.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_13/examples/0-basic/cbox.pl> - IUP::Cbox example
 
-=item * L<0-basic/colorbar.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_12/examples/0-basic/colorbar.pl> - IUP::ColorBar example
+=item * L<0-basic/colorbar.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_13/examples/0-basic/colorbar.pl> - IUP::ColorBar example
 
-=item * L<0-basic/layoutdialog.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_12/examples/0-basic/layoutdialog.pl> - IUP::LayoutDialog example
+=item * L<0-basic/layoutdialog.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_13/examples/0-basic/layoutdialog.pl> - IUP::LayoutDialog example
 
-=item * L<0-basic/sbox2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_12/examples/0-basic/sbox2.pl> - IUP::Sbox example
+=item * L<0-basic/sbox2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_13/examples/0-basic/sbox2.pl> - IUP::Sbox example
 
-=item * L<0-basic/scrollbar.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_12/examples/0-basic/scrollbar.pl> - IUP::Canvas (with scrollbar) example
+=item * L<0-basic/scrollbar.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_13/examples/0-basic/scrollbar.pl> - IUP::Canvas (with scrollbar) example
 
-=item * L<1-apps/app-mdi.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_12/examples/1-apps/app-mdi.pl> - IUP app example
+=item * L<1-apps/app-mdi.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_13/examples/1-apps/app-mdi.pl> - IUP app example
 
-=item * L<1-apps/app-sample1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_12/examples/1-apps/app-sample1.pl> - example used for screenshot - IUP.pod
+=item * L<1-apps/app-sample1.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_13/examples/1-apps/app-sample1.pl> - example used for screenshot - IUP.pod
 
-=item * L<1-apps/app-sample2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_12/examples/1-apps/app-sample2.pl> - example based on the original sample.c
+=item * L<1-apps/app-sample2.pl|http://cpansearch.perl.org/src/KMX/IUP-0.002_13/examples/1-apps/app-sample2.pl> - example based on the original sample.c
 
 =back 
 
