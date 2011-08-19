@@ -31,31 +31,34 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Alien::IUP" : "0.303",
+            "Alien::IUP" : "0.304",
             "Carp" : 0,
             "ExtUtils::CBuilder" : 0,
-            "Module::Build" : 0,
+            "Module::Build" : "0.36",
             "Test::More" : 0,
-            "constant" : 0
+            "constant" : 0,
+            "perl" : "5.008008"
          }
       },
       "configure" : {
          "requires" : {
-            "Alien::IUP" : "0.303",
-            "Module::Build" : 0
+            "Alien::IUP" : "0.304",
+            "Module::Build" : "0.36",
+            "perl" : "5.008008"
          }
       },
       "runtime" : {
          "requires" : {
             "Carp" : 0,
-            "constant" : 0
+            "constant" : 0,
+            "perl" : "5.008008"
          }
       }
    },
    "provides" : {
       "IUP" : {
          "file" : "lib/IUP.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "IUP::Button" : {
          "file" : "lib/IUP/Button.pm",
@@ -294,5 +297,5 @@
          "url" : "https://github.com/kmx/perl-iup"
       }
    },
-   "version" : "0.003"
+   "version" : "0.004"
 }

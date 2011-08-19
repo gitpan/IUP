@@ -3,15 +3,17 @@ abstract: 'IUP bindings to Perl'
 author:
   - 'KMX <kmx@cpan.org>'
 build_requires:
-  Alien::IUP: 0.303
+  Alien::IUP: 0.304
   Carp: 0
   ExtUtils::CBuilder: 0
-  Module::Build: 0
+  Module::Build: 0.36
   Test::More: 0
   constant: 0
+  perl: 5.008008
 configure_requires:
-  Alien::IUP: 0.303
-  Module::Build: 0
+  Alien::IUP: 0.304
+  Module::Build: 0.36
+  perl: 5.008008
 dynamic_config: 1
 generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.110580'
 keywords:
@@ -36,7 +38,7 @@ name: IUP
 provides:
   IUP:
     file: lib/IUP.pm
-    version: 0.003
+    version: 0.004
   IUP::Button:
     file: lib/IUP/Button.pm
     version: 0
@@ -208,8 +210,9 @@ provides:
 requires:
   Carp: 0
   constant: 0
+  perl: 5.008008
 resources:
   bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=IUP
   license: http://www.opensource.org/licenses/mit-license.php
   repository: https://github.com/kmx/perl-iup
-version: 0.003
+version: 0.004
