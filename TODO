@@ -4,6 +4,13 @@
 
 ##########################################################
 
+UTF8
+#ifdef sv_utf8_decode
+        sv_utf8_decode(sv);
+#else
+        SvUTF8_on(sv);
+#endif
+
 ######## POD/IMPORTANT: 
 - finish pod for IUP::Canvas::(Palette|Pattern|Stipple|Bitmap)
 - finish pod for IUP::Manual::* (CB/AT accessors)
@@ -11,7 +18,7 @@
 
 ######## CODE/IMPORTANT: correct element destruction still needs some work
 - Internal/Element.pm (look for XXX-FIXME + XXX-CHECKLATER)
-   
+
 ######## TESTS/IMPORTANT: add more tests
 - split tests: t\*.t + all GUI-related >>> t\gui\*.t
 - maybe close after timeout (IUP::Timer -> return IUP_CLOSE)
@@ -155,23 +162,6 @@ http://www.i-programmer.info/programming/other-languages/1973-unicode-issues-in-
 
 (not now, maybe later)######## Linux - platform specific issues
 - GTK: 'Quit' in main menu requires double click
-
-(not now, maybe later)######## Packaging (not a priority)
-- RHEL 5 + FC 13,12,11
-  - http://search.cpan.org/dist/cpan2rpm/
-  - http://search.cpan.org/dist/Ovid/
-- Db 4,5 (Ubuntu?)
-  - http://search.cpan.org/dist/Debian-Apt-PM/
-  - http://www.debian-administration.org/articles/78
-    http://www.opensourcery.com/blog/hans-dieter-pearcey/packaging-cpan-modules-debian
-- Linux distro info
-  - http://distrowatch.com/table.php?distribution=ubuntu (10.04/LTS,9.10,8.04/LTS)
-  - http://distrowatch.com/table.php?distribution=debian (5,4)
-  - http://distrowatch.com/table.php?distribution=fedora (13,12,11)
-  - http://distrowatch.com/table.php?distribution=redhat (5,4)
-- vmware images: 
-  - http://chrysaor.info/?page=images&filter=Ubuntu
-  - http://www.thoughtpolice.co.uk/vmware/
 
 ### REJECTED FOR NOW ################################################################################################
 

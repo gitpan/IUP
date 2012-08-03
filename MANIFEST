@@ -132,9 +132,9 @@ lib/IUP/Hbox.pm
 lib/IUP/Hbox.pod
 lib/IUP/Image.pm
 lib/IUP/Image.pod
-lib/IUP/Internal/Attribute.pm
+lib/IUP/Internal/Callback.c.inc
 lib/IUP/Internal/Callback.pm
-lib/IUP/Internal/Callback.xs
+lib/IUP/Internal/Callback.xs.inc
 lib/IUP/Internal/Canvas.pm
 lib/IUP/Internal/Canvas.xs
 lib/IUP/Internal/Element.pm

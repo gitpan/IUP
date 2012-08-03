@@ -4,7 +4,7 @@
       "KMX <kmx@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.110580",
+   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.112621",
    "keywords" : [
       "IUP",
       "portable",
@@ -58,7 +58,7 @@
    "provides" : {
       "IUP" : {
          "file" : "lib/IUP.pm",
-         "version" : "0.004"
+         "version" : "0.005_1"
       },
       "IUP::Button" : {
          "file" : "lib/IUP/Button.pm",
@@ -158,10 +158,6 @@
       },
       "IUP::Image" : {
          "file" : "lib/IUP/Image.pm",
-         "version" : 0
-      },
-      "IUP::Internal::Attribute" : {
-         "file" : "lib/IUP/Internal/Attribute.pm",
          "version" : 0
       },
       "IUP::Internal::Callback" : {
@@ -285,7 +281,7 @@
          "version" : 0
       }
    },
-   "release_status" : "stable",
+   "release_status" : "testing",
    "resources" : {
       "bugtracker" : {
          "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=IUP"
@@ -297,5 +293,5 @@
          "url" : "https://github.com/kmx/perl-iup"
       }
    },
-   "version" : "0.004"
+   "version" : "0.005_1"
 }
