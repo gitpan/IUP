@@ -135,8 +135,14 @@ lib/IUP/Image.pod
 lib/IUP/Internal/Callback.c.inc
 lib/IUP/Internal/Callback.pm
 lib/IUP/Internal/Callback.xs.inc
+lib/IUP/Internal/Canvas.c.inc
 lib/IUP/Internal/Canvas.pm
-lib/IUP/Internal/Canvas.xs
+lib/IUP/Internal/Canvas.xs.inc
+lib/IUP/Internal/Canvas_Bitmap.xs.inc
+lib/IUP/Internal/Canvas_InternalServerImage.xs.inc
+lib/IUP/Internal/Canvas_Palette.xs.inc
+lib/IUP/Internal/Canvas_Pattern.xs.inc
+lib/IUP/Internal/Canvas_Stipple.xs.inc
 lib/IUP/Internal/Element.pm
 lib/IUP/Internal/LibraryIup.pm
 lib/IUP/Internal/LibraryIup.xs

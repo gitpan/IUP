@@ -7,6 +7,13 @@
 
 #ifdef HAVELIB_IUPCD
 #include <cd.h>
+#include <cdiup.h>
+#endif
+
+#ifdef HAVELIB_IUPIM
+#include <iupim.h>
+#include <im.h>
+#include <im_image.h>
 #endif
 
 #ifdef HAVELIB_IUPCONTROLS
@@ -23,10 +30,6 @@
 
 #ifdef HAVELIB_IUPGL
 #include <iupgl.h>
-#endif
-
-#ifdef HAVELIB_IUPIM
-#include <iupim.h>
 #endif
 
 #ifdef HAVELIB_IUPOLE
@@ -102,10 +105,16 @@ static int cb_param_action(Ihandle* dialog, int param_index, void* user_data) {
   return ret;
 }
 
-/* xxxCHECKLATER is not thread safe */
-static SV* idle_action = (SV*)NULL;;
+#define MY_CXT_KEY "IUP::Internal::LibraryIup::_guts" XS_VERSION
+
+typedef struct {
+    SV* idle_action;
+    /* maybe more in the future */
+} my_cxt_t;
+START_MY_CXT;
 
 static int cb_idle_action() {  
+  dMY_CXT;
   dSP;
   int count, ret;
   
@@ -113,7 +122,7 @@ static int cb_idle_action() {
   SAVETMPS;
     
   PUSHMARK(SP);  
-  count = call_sv(idle_action,G_SCALAR|G_NOARGS);
+  count = call_sv(MY_CXT.idle_action,G_SCALAR|G_NOARGS);
 
   SPAGAIN;
 
@@ -128,35 +137,54 @@ static int cb_idle_action() {
   return ret;
 }
 
-#include "Callback.c.inc"
-/* XXX-MAYBE-LATER #include "Canvas.c.inc" */
 
-MODULE = IUP::Internal::Callback	PACKAGE = IUP::Internal::Callback
+#include "Callback.c.inc"
+#include "Canvas.c.inc"
+
+MODULE = IUP	PACKAGE = IUP
+
+#XXX-TODO move some functions from IUP.pm here
 
 INCLUDE: Callback.xs.inc
-
-# XXX-MAYBE-LATER INCLUDE: Canvas.xs.inc
+INCLUDE: Canvas.xs.inc
+INCLUDE: Canvas_Bitmap.xs.inc
+INCLUDE: Canvas_Palette.xs.inc
+INCLUDE: Canvas_Pattern.xs.inc
+INCLUDE: Canvas_Stipple.xs.inc 
+INCLUDE: Canvas_InternalServerImage.xs.inc
 
 MODULE = IUP::Internal::LibraryIup	PACKAGE = IUP::Internal::LibraryIup
 
+BOOT:
+    {
+        MY_CXT_INIT;
+        MY_CXT.idle_action = newSVsv(&PL_sv_undef);
+    }
+
+void
+CLONE(...)
+    CODE:
+    {
+        MY_CXT_CLONE;
+        MY_CXT.idle_action = newSVsv(&PL_sv_undef);
+    }
+
 ################################################################################
-SV*
+void
 _SetIdle(func)
 		SV* func;
-	CODE:		
-		RETVAL=newSVsv(idle_action); /* xxxCHECKLATER not sure if this is OK */
-		if (idle_action==(SV*)NULL)
-		  idle_action = newSVsv(func);
-		else
-		  SvSetSV(idle_action, func);
-		if (SvOK(func)) {
+	PPCODE:
+        {
+                dMY_CXT;
+                XPUSHs(sv_2mortal(newSVsv(MY_CXT.idle_action))); /* return the old value */
+                SvSetSV(MY_CXT.idle_action, func);
+                if (SvOK(func)) {
 		  IupSetFunction("IDLE_ACTION", (Icallback)cb_idle_action);
 		}
 		else {
                   IupSetFunction("IDLE_ACTION", (Icallback)NULL);
 		}
-	OUTPUT:
-		RETVAL
+	}
 
 ################################################################################ iup.h
 
