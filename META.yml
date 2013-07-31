@@ -15,7 +15,7 @@ configure_requires:
   Module::Build: 0.36
   perl: 5.008008
 dynamic_config: 1
-generated_by: 'Module::Build version 0.4002, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Module::Build version 0.4004, CPAN::Meta::Converter version 2.120921'
 keywords:
   - IUP
   - portable
@@ -38,7 +38,7 @@ name: IUP
 provides:
   IUP:
     file: lib/IUP.pm
-    version: 0.100
+    version: 0.101
   IUP::Button:
     file: lib/IUP/Button.pm
     version: 0
@@ -212,4 +212,4 @@ resources:
   bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=IUP
   license: http://www.opensource.org/licenses/mit-license.php
   repository: https://github.com/kmx/perl-iup
-version: 0.100
+version: 0.101
