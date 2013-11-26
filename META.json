@@ -4,7 +4,7 @@
       "KMX <kmx@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4004, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Module::Build version 0.4007, CPAN::Meta::Converter version 2.132510",
    "keywords" : [
       "IUP",
       "portable",
@@ -31,7 +31,7 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Alien::IUP" : "0.304",
+            "Alien::IUP" : "0.6",
             "Carp" : "0",
             "ExtUtils::CBuilder" : "0",
             "Module::Build" : "0.36",
@@ -42,7 +42,7 @@
       },
       "configure" : {
          "requires" : {
-            "Alien::IUP" : "0.304",
+            "Alien::IUP" : "0.6",
             "Module::Build" : "0.36",
             "perl" : "5.008008"
          }
@@ -58,240 +58,188 @@
    "provides" : {
       "IUP" : {
          "file" : "lib/IUP.pm",
-         "version" : "0.101"
+         "version" : "0.200_1"
       },
       "IUP::Button" : {
-         "file" : "lib/IUP/Button.pm",
-         "version" : 0
+         "file" : "lib/IUP/Button.pm"
       },
       "IUP::Canvas" : {
-         "file" : "lib/IUP/Canvas.pm",
-         "version" : 0
+         "file" : "lib/IUP/Canvas.pm"
       },
       "IUP::Canvas::Bitmap" : {
-         "file" : "lib/IUP/Canvas.pm",
-         "version" : 0
+         "file" : "lib/IUP/Canvas.pm"
       },
       "IUP::Canvas::FileBitmap" : {
-         "file" : "lib/IUP/Canvas/FileBitmap.pm",
-         "version" : 0
+         "file" : "lib/IUP/Canvas/FileBitmap.pm"
       },
       "IUP::Canvas::FileVector" : {
-         "file" : "lib/IUP/Canvas/FileVector.pm",
-         "version" : 0
+         "file" : "lib/IUP/Canvas/FileVector.pm"
       },
       "IUP::Canvas::Palette" : {
-         "file" : "lib/IUP/Canvas.pm",
-         "version" : 0
+         "file" : "lib/IUP/Canvas.pm"
       },
       "IUP::Canvas::Pattern" : {
-         "file" : "lib/IUP/Canvas.pm",
-         "version" : 0
+         "file" : "lib/IUP/Canvas.pm"
       },
       "IUP::Canvas::Stipple" : {
-         "file" : "lib/IUP/Canvas.pm",
-         "version" : 0
+         "file" : "lib/IUP/Canvas.pm"
       },
       "IUP::CanvasGL" : {
-         "file" : "lib/IUP/CanvasGL.pm",
-         "version" : 0
+         "file" : "lib/IUP/CanvasGL.pm"
       },
       "IUP::Cbox" : {
-         "file" : "lib/IUP/Cbox.pm",
-         "version" : 0
+         "file" : "lib/IUP/Cbox.pm"
       },
       "IUP::Cells" : {
-         "file" : "lib/IUP/Cells.pm",
-         "version" : 0
+         "file" : "lib/IUP/Cells.pm"
       },
       "IUP::Clipboard" : {
-         "file" : "lib/IUP/Clipboard.pm",
-         "version" : 0
+         "file" : "lib/IUP/Clipboard.pm"
       },
       "IUP::ColorBar" : {
-         "file" : "lib/IUP/ColorBar.pm",
-         "version" : 0
+         "file" : "lib/IUP/ColorBar.pm"
       },
       "IUP::ColorBrowser" : {
-         "file" : "lib/IUP/ColorBrowser.pm",
-         "version" : 0
+         "file" : "lib/IUP/ColorBrowser.pm"
       },
       "IUP::ColorDlg" : {
-         "file" : "lib/IUP/ColorDlg.pm",
-         "version" : 0
+         "file" : "lib/IUP/ColorDlg.pm"
       },
       "IUP::Constants" : {
-         "file" : "lib/IUP/Constants.pm",
-         "version" : 0
+         "file" : "lib/IUP/Constants.pm"
       },
       "IUP::Dial" : {
-         "file" : "lib/IUP/Dial.pm",
-         "version" : 0
+         "file" : "lib/IUP/Dial.pm"
       },
       "IUP::Dialog" : {
-         "file" : "lib/IUP/Dialog.pm",
-         "version" : 0
+         "file" : "lib/IUP/Dialog.pm"
       },
       "IUP::ElementPropertiesDialog" : {
-         "file" : "lib/IUP/ElementPropertiesDialog.pm",
-         "version" : 0
+         "file" : "lib/IUP/ElementPropertiesDialog.pm"
       },
       "IUP::FileDlg" : {
-         "file" : "lib/IUP/FileDlg.pm",
-         "version" : 0
+         "file" : "lib/IUP/FileDlg.pm"
       },
       "IUP::Fill" : {
-         "file" : "lib/IUP/Fill.pm",
-         "version" : 0
+         "file" : "lib/IUP/Fill.pm"
       },
       "IUP::FontDlg" : {
-         "file" : "lib/IUP/FontDlg.pm",
-         "version" : 0
+         "file" : "lib/IUP/FontDlg.pm"
       },
       "IUP::Frame" : {
-         "file" : "lib/IUP/Frame.pm",
-         "version" : 0
+         "file" : "lib/IUP/Frame.pm"
       },
       "IUP::Hbox" : {
-         "file" : "lib/IUP/Hbox.pm",
-         "version" : 0
+         "file" : "lib/IUP/Hbox.pm"
       },
       "IUP::Image" : {
-         "file" : "lib/IUP/Image.pm",
-         "version" : 0
+         "file" : "lib/IUP/Image.pm"
       },
       "IUP::Internal::Callback" : {
-         "file" : "lib/IUP/Internal/Callback.pm",
-         "version" : 0
+         "file" : "lib/IUP/Internal/Callback.pm"
       },
       "IUP::Internal::Canvas" : {
-         "file" : "lib/IUP/Internal/Canvas.pm",
-         "version" : 0
+         "file" : "lib/IUP/Internal/Canvas.pm"
       },
       "IUP::Internal::Element" : {
-         "file" : "lib/IUP/Internal/Element.pm",
-         "version" : 0
+         "file" : "lib/IUP/Internal/Element.pm"
       },
       "IUP::Internal::LibraryIup" : {
-         "file" : "lib/IUP/Internal/LibraryIup.pm",
-         "version" : 0
+         "file" : "lib/IUP/Internal/LibraryIup.pm"
       },
       "IUP::Item" : {
-         "file" : "lib/IUP/Item.pm",
-         "version" : 0
+         "file" : "lib/IUP/Item.pm"
       },
       "IUP::Label" : {
-         "file" : "lib/IUP/Label.pm",
-         "version" : 0
+         "file" : "lib/IUP/Label.pm"
       },
       "IUP::LayoutDialog" : {
-         "file" : "lib/IUP/LayoutDialog.pm",
-         "version" : 0
+         "file" : "lib/IUP/LayoutDialog.pm"
       },
       "IUP::List" : {
-         "file" : "lib/IUP/List.pm",
-         "version" : 0
+         "file" : "lib/IUP/List.pm"
       },
       "IUP::Matrix" : {
-         "file" : "lib/IUP/Matrix.pm",
-         "version" : 0
+         "file" : "lib/IUP/Matrix.pm"
       },
       "IUP::Menu" : {
-         "file" : "lib/IUP/Menu.pm",
-         "version" : 0
+         "file" : "lib/IUP/Menu.pm"
       },
       "IUP::MessageDlg" : {
-         "file" : "lib/IUP/MessageDlg.pm",
-         "version" : 0
+         "file" : "lib/IUP/MessageDlg.pm"
+      },
+      "IUP::MglPlot" : {
+         "file" : "lib/IUP/MglPlot.pm"
       },
       "IUP::Normalizer" : {
-         "file" : "lib/IUP/Normalizer.pm",
-         "version" : 0
+         "file" : "lib/IUP/Normalizer.pm"
       },
       "IUP::PPlot" : {
-         "file" : "lib/IUP/PPlot.pm",
-         "version" : 0
+         "file" : "lib/IUP/PPlot.pm"
       },
       "IUP::ProgressBar" : {
-         "file" : "lib/IUP/ProgressBar.pm",
-         "version" : 0
+         "file" : "lib/IUP/ProgressBar.pm"
       },
       "IUP::Radio" : {
-         "file" : "lib/IUP/Radio.pm",
-         "version" : 0
+         "file" : "lib/IUP/Radio.pm"
       },
       "IUP::Sbox" : {
-         "file" : "lib/IUP/Sbox.pm",
-         "version" : 0
+         "file" : "lib/IUP/Sbox.pm"
       },
       "IUP::Separator" : {
-         "file" : "lib/IUP/Separator.pm",
-         "version" : 0
+         "file" : "lib/IUP/Separator.pm"
       },
       "IUP::Spin" : {
-         "file" : "lib/IUP/Spin.pm",
-         "version" : 0
+         "file" : "lib/IUP/Spin.pm"
       },
       "IUP::SpinBox" : {
-         "file" : "lib/IUP/SpinBox.pm",
-         "version" : 0
+         "file" : "lib/IUP/SpinBox.pm"
       },
       "IUP::Split" : {
-         "file" : "lib/IUP/Split.pm",
-         "version" : 0
+         "file" : "lib/IUP/Split.pm"
       },
       "IUP::Submenu" : {
-         "file" : "lib/IUP/Submenu.pm",
-         "version" : 0
+         "file" : "lib/IUP/Submenu.pm"
       },
       "IUP::Tabs" : {
-         "file" : "lib/IUP/Tabs.pm",
-         "version" : 0
+         "file" : "lib/IUP/Tabs.pm"
       },
       "IUP::Text" : {
-         "file" : "lib/IUP/Text.pm",
-         "version" : 0
+         "file" : "lib/IUP/Text.pm"
       },
       "IUP::Timer" : {
-         "file" : "lib/IUP/Timer.pm",
-         "version" : 0
+         "file" : "lib/IUP/Timer.pm"
       },
       "IUP::Toggle" : {
-         "file" : "lib/IUP/Toggle.pm",
-         "version" : 0
+         "file" : "lib/IUP/Toggle.pm"
       },
       "IUP::Tree" : {
-         "file" : "lib/IUP/Tree.pm",
-         "version" : 0
+         "file" : "lib/IUP/Tree.pm"
       },
       "IUP::User" : {
-         "file" : "lib/IUP/User.pm",
-         "version" : 0
+         "file" : "lib/IUP/User.pm"
       },
       "IUP::Val" : {
-         "file" : "lib/IUP/Val.pm",
-         "version" : 0
+         "file" : "lib/IUP/Val.pm"
       },
       "IUP::Vbox" : {
-         "file" : "lib/IUP/Vbox.pm",
-         "version" : 0
+         "file" : "lib/IUP/Vbox.pm"
       },
       "IUP::Zbox" : {
-         "file" : "lib/IUP/Zbox.pm",
-         "version" : 0
+         "file" : "lib/IUP/Zbox.pm"
       }
    },
-   "release_status" : "stable",
+   "release_status" : "testing",
    "resources" : {
       "bugtracker" : {
          "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=IUP"
       },
       "license" : [
-         "http://www.opensource.org/licenses/mit-license.php"
+         "http://opensource.org/licenses/mit-license.php"
       ],
       "repository" : {
          "url" : "https://github.com/kmx/perl-iup"
       }
    },
-   "version" : "0.101"
+   "version" : "0.200_1"
 }

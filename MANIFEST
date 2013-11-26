@@ -146,6 +146,8 @@ lib/IUP/Internal/Canvas_Stipple.xs.inc
 lib/IUP/Internal/Element.pm
 lib/IUP/Internal/LibraryIup.pm
 lib/IUP/Internal/LibraryIup.xs
+lib/IUP/Internal/MglPlot.xs.inc
+lib/IUP/Internal/PPlot.xs.inc
 lib/IUP/Item.pm
 lib/IUP/Item.pod
 lib/IUP/Label.pm
@@ -168,6 +170,8 @@ lib/IUP/Menu.pm
 lib/IUP/Menu.pod
 lib/IUP/MessageDlg.pm
 lib/IUP/MessageDlg.pod
+lib/IUP/MglPlot.pm
+lib/IUP/MglPlot.pod
 lib/IUP/Normalizer.pm
 lib/IUP/Normalizer.pod
 lib/IUP/PPlot.pm

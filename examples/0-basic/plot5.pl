@@ -27,20 +27,19 @@ sub AxsBounds {
   }
 }
 
-#xxxTODO add_series vs. AddSeries
 sub add_series {
   my ($plot, $xvalues, $yvalues, $options) = @_;
   # are we given strings for the x values?
-  $plot->PlotBegin(looks_like_number($xvalues->[1]) ? 0 : 1);
-  $plot->PlotAdd($xvalues->[$_],$yvalues->[$_]) for (0..scalar(@$xvalues)-1);
-  $plot->PlotEnd();
+  if (looks_like_number($xvalues->[1])) {
+    $plot->PlotAdd2D($xvalues,$yvalues);
+  }
+  else {
+    $plot->PlotAdd1D($xvalues,$yvalues);
+  }
   # set any series-specific plot attributes
   if ($options) {
     # mode must be set before any other attributes!
-    if ($options->{DS_MODE}) {
-      $plot->DS_MODE($options->{DS_MODE});
-      delete $options->{DS_MODE};
-    }
+    $plot->DS_MODE(delete $options->{DS_MODE}) if $options->{DS_MODE};
     $plot->SetAttribute(%$options);
   }
 }

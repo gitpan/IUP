@@ -27,13 +27,14 @@ sub AxsBounds {
   }
 }
 
-#xxxTODO maybe add AddSeries to IUP::PPlot
 sub AddSeries {
   my ($plot, @values) = @_;
-  # are we given strings for the x values?
-  $plot->PlotBegin(looks_like_number($values[0]->[0]) ? 0 : 1);
-  $plot->PlotAdd($values[$_]->[0],$values[$_]->[1]) for (0..scalar(@values)-1);
-  $plot->PlotEnd();
+  my (@x, @y);
+  for (@values) {
+    push @x, $_->[0];
+    push @y, $_->[1];
+  }
+  $plot->PlotAdd2D(\@x,\@y);
 }
 
 
