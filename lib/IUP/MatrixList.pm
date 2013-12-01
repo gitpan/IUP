@@ -1,4 +1,4 @@
-package IUP::List;
+package IUP::MatrixList;
 use strict;
 use warnings;
 use base 'IUP::Internal::Element';
@@ -7,7 +7,7 @@ use Carp;
 
 sub _create_element {
   my ($self, $args) = @_;
-  my $ih = IUP::Internal::LibraryIup::_IupList(undef);
+  my $ih = IUP::Internal::LibraryIup::_IupMatrixList();
 
   if (defined $ih) {
     $self->ihandle($ih);

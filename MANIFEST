@@ -120,6 +120,8 @@ lib/IUP/Dialog.pm
 lib/IUP/Dialog.pod
 lib/IUP/ElementPropertiesDialog.pm
 lib/IUP/ElementPropertiesDialog.pod
+lib/IUP/Expander.pm
+lib/IUP/Expander.pod
 lib/IUP/FileDlg.pm
 lib/IUP/FileDlg.pod
 lib/IUP/Fill.pm
@@ -128,6 +130,10 @@ lib/IUP/FontDlg.pm
 lib/IUP/FontDlg.pod
 lib/IUP/Frame.pm
 lib/IUP/Frame.pod
+lib/IUP/Gauge.pm
+lib/IUP/Gauge.pod
+lib/IUP/GridBox.pm
+lib/IUP/GridBox.pod
 lib/IUP/Hbox.pm
 lib/IUP/Hbox.pod
 lib/IUP/Image.pm
@@ -154,6 +160,8 @@ lib/IUP/Label.pm
 lib/IUP/Label.pod
 lib/IUP/LayoutDialog.pm
 lib/IUP/LayoutDialog.pod
+lib/IUP/Link.pm
+lib/IUP/Link.pod
 lib/IUP/List.pm
 lib/IUP/List.pod
 lib/IUP/Manual/01_Introduction.pod
@@ -166,6 +174,8 @@ lib/IUP/Manual/07_UsingImageLibrary.pod
 lib/IUP/Manual/99_Test.pod
 lib/IUP/Matrix.pm
 lib/IUP/Matrix.pod
+lib/IUP/MatrixList.pm
+lib/IUP/MatrixList.pod
 lib/IUP/Menu.pm
 lib/IUP/Menu.pod
 lib/IUP/MessageDlg.pm
@@ -178,6 +188,8 @@ lib/IUP/PPlot.pm
 lib/IUP/PPlot.pod
 lib/IUP/ProgressBar.pm
 lib/IUP/ProgressBar.pod
+lib/IUP/ProgressDlg.pm
+lib/IUP/ProgressDlg.pod
 lib/IUP/Radio.pm
 lib/IUP/Radio.pod
 lib/IUP/Sbox.pm

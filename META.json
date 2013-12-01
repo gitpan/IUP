@@ -58,7 +58,7 @@
    "provides" : {
       "IUP" : {
          "file" : "lib/IUP.pm",
-         "version" : "0.200_2"
+         "version" : "0.200_3"
       },
       "IUP::Button" : {
          "file" : "lib/IUP/Button.pm",
@@ -136,6 +136,10 @@
          "file" : "lib/IUP/ElementPropertiesDialog.pm",
          "version" : 0
       },
+      "IUP::Expander" : {
+         "file" : "lib/IUP/Expander.pm",
+         "version" : 0
+      },
       "IUP::FileDlg" : {
          "file" : "lib/IUP/FileDlg.pm",
          "version" : 0
@@ -150,6 +154,14 @@
       },
       "IUP::Frame" : {
          "file" : "lib/IUP/Frame.pm",
+         "version" : 0
+      },
+      "IUP::Gauge" : {
+         "file" : "lib/IUP/Gauge.pm",
+         "version" : 0
+      },
+      "IUP::GridBox" : {
+         "file" : "lib/IUP/GridBox.pm",
          "version" : 0
       },
       "IUP::Hbox" : {
@@ -188,12 +200,20 @@
          "file" : "lib/IUP/LayoutDialog.pm",
          "version" : 0
       },
+      "IUP::Link" : {
+         "file" : "lib/IUP/Link.pm",
+         "version" : 0
+      },
       "IUP::List" : {
          "file" : "lib/IUP/List.pm",
          "version" : 0
       },
       "IUP::Matrix" : {
          "file" : "lib/IUP/Matrix.pm",
+         "version" : 0
+      },
+      "IUP::MatrixList" : {
+         "file" : "lib/IUP/MatrixList.pm",
          "version" : 0
       },
       "IUP::Menu" : {
@@ -218,6 +238,10 @@
       },
       "IUP::ProgressBar" : {
          "file" : "lib/IUP/ProgressBar.pm",
+         "version" : 0
+      },
+      "IUP::ProgressDlg" : {
+         "file" : "lib/IUP/ProgressDlg.pm",
          "version" : 0
       },
       "IUP::Radio" : {
@@ -297,5 +321,5 @@
          "url" : "https://github.com/kmx/perl-iup"
       }
    },
-   "version" : "0.200_2"
+   "version" : "0.200_3"
 }
