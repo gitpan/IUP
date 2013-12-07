@@ -15,16 +15,19 @@ examples/0-basic/colordlg.pl
 examples/0-basic/dial.pl
 examples/0-basic/dialog1.pl
 examples/0-basic/dialog2.pl
+examples/0-basic/expander.pl
 examples/0-basic/filedlg.pl
 examples/0-basic/fill.pl
 examples/0-basic/frame1.pl
 examples/0-basic/frame2.pl
+examples/0-basic/gauge.pl
 examples/0-basic/getcolor.pl
 examples/0-basic/getfile.pl
 examples/0-basic/getparam1.pl
 examples/0-basic/getparam2.pl
 examples/0-basic/glcanvas1.pl
 examples/0-basic/glcanvas2.pl
+examples/0-basic/gridbox.pl
 examples/0-basic/hbox.pl
 examples/0-basic/idle.pl
 examples/0-basic/image.pl
@@ -39,6 +42,7 @@ examples/0-basic/mask_matrix.pl
 examples/0-basic/mask_simple.pl
 examples/0-basic/matrix_basic.pl
 examples/0-basic/matrix_cbmode.pl
+examples/0-basic/matrixlist.pl
 examples/0-basic/menu.pl
 examples/0-basic/message.pl
 examples/0-basic/message_clone.pl
@@ -49,6 +53,7 @@ examples/0-basic/plot3.pl
 examples/0-basic/plot4.pl
 examples/0-basic/plot5.pl
 examples/0-basic/plot_advanced.pl
+examples/0-basic/pre-dialogs.pl
 examples/0-basic/progressbar1.pl
 examples/0-basic/progressbar2.pl
 examples/0-basic/progressbar3.pl
