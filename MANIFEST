@@ -227,7 +227,7 @@ lib/IUP/Vbox.pm
 lib/IUP/Vbox.pod
 lib/IUP/Zbox.pm
 lib/IUP/Zbox.pod
-MANIFEST			This list of files
+MANIFEST
 META.json
 META.yml
 README
