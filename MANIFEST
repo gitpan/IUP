@@ -15,6 +15,7 @@ examples/0-basic/colordlg.pl
 examples/0-basic/dial.pl
 examples/0-basic/dialog1.pl
 examples/0-basic/dialog2.pl
+examples/0-basic/drag-demo.pl
 examples/0-basic/expander.pl
 examples/0-basic/filedlg.pl
 examples/0-basic/fill.pl
