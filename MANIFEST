@@ -200,6 +200,8 @@ lib/IUP/Radio.pm
 lib/IUP/Radio.pod
 lib/IUP/Sbox.pm
 lib/IUP/Sbox.pod
+lib/IUP/ScrollBox.pm
+lib/IUP/ScrollBox.pod
 lib/IUP/Separator.pm
 lib/IUP/Separator.pod
 lib/IUP/Spin.pm

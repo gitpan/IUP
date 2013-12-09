@@ -58,7 +58,7 @@
    "provides" : {
       "IUP" : {
          "file" : "lib/IUP.pm",
-         "version" : "0.200_9"
+         "version" : "0.200_10"
       },
       "IUP::Button" : {
          "file" : "lib/IUP/Button.pm",
@@ -252,6 +252,10 @@
          "file" : "lib/IUP/Sbox.pm",
          "version" : 0
       },
+      "IUP::ScrollBox" : {
+         "file" : "lib/IUP/ScrollBox.pm",
+         "version" : 0
+      },
       "IUP::Separator" : {
          "file" : "lib/IUP/Separator.pm",
          "version" : 0
@@ -321,5 +325,5 @@
          "url" : "https://github.com/kmx/perl-iup"
       }
    },
-   "version" : "0.200_9"
+   "version" : "0.200_10"
 }
