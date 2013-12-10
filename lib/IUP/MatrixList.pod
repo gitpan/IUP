@@ -217,7 +217,7 @@ Shows only the B<IMAGEDEL> image and ignores B<IMAGECHECK> and B<IMAGEUNCHECK>.
 
 =item B<TITLE>
 
-title of the list. When not NULL the list will display a non scrollable title.
+title of the list. When not C<undef> the list will display a non scrollable title.
 
 =item B<TOPITEM>
 
@@ -455,7 +455,7 @@ The element B<IUP::MatrixList> is used in the following sample scripts:
 
 =over
 
-=item * L<0-basic/matrixlist.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/matrixlist.pl> - IUP::MatrixList example
+=item * L<0-basic/matrixlist.pl|https://metacpan.org/source/KMX/IUP-0.200_12/examples/0-basic/matrixlist.pl> - IUP::MatrixList example
 
 =back 
 

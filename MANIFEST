@@ -178,6 +178,7 @@ lib/IUP/Manual/04_Callbacks.pod
 lib/IUP/Manual/05_DialogLayout.pod
 lib/IUP/Manual/06_HandlingKeyboard.pod
 lib/IUP/Manual/07_UsingImageLibrary.pod
+lib/IUP/Manual/08_DragAndDrop.pod
 lib/IUP/Manual/99_Test.pod
 lib/IUP/Matrix.pm
 lib/IUP/Matrix.pod
