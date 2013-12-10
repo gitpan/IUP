@@ -683,7 +683,7 @@ B<CD_FORCE> or B<CD_POLITE>. B<CD_FORCE> ignores the system
 colors and interface elements, since the menus and dialogues may be in
 illegible colors, but there will be more colors available.
 C<B<CD_POLITE>> is the recommended type. It must always be used before
-drawing. It cannot be queried.
+drawing. It cannot be queried. See also L<IUP::Canvas::Palette>.
 
 =head3 cdCreatePalette()
 
@@ -691,7 +691,7 @@ drawing. It cannot be queried.
  #or
  $palete = IUP::Canvas=>cdCreatePalette($size);
 
-Creates a palette.
+Creates a palette. See also L<IUP::Canvas::Palette>.
 
 =head3 cdKillPalette()
 
@@ -699,8 +699,7 @@ Creates a palette.
  #or
  IUP::Canvas->cdKillPalette($palette);
 
-Destroys the created palette and liberates allocated memory. If this
-function is not called in Lua, the garbage collector will call it.
+Destroys the created palette and liberates allocated memory.
 
 =head3 Palette Data Access
 
@@ -1532,10 +1531,10 @@ Hatch Styles
 
 =head3 cdStipple()
 
- $stipple = IUP::Canvas::Stipple->new( [[1 0 1 0 1 0 1 1 0 1], 
-							            [1 0 1 0 1 1 0 1 1 0],
-										[1 0 1 1 0 1 0 1 1 0],
-										[1 0 1 1 0 1 1 0 1 1]] );
+ $stipple = IUP::Canvas::Stipple->new( [[1,0,1,0,1,0,1,1,0,1], 
+                                        [1,0,1,0,1,1,0,1,1,0],
+                                        [1,0,1,1,0,1,0,1,1,0],
+                                        [1,0,1,1,0,1,1,0,1,1]] );
  $canvas->cdStipple($stipple);
 
 Defines a stipple (= matrix of zeros 0 and ones 1). The zeros are
@@ -1568,8 +1567,8 @@ Returns C<undef> if no I<stipple> was defined.
  $color1 = $canvas->cdEncodeColor(0, 0, 220);
  $color2 = $canvas->cdEncodeColor(220, 0, 220); 
  $pattern = IUP::Canvas::Pattern->new( [[$color1, $color2, $color1], 
-									    [$color2, $color1, $color2],
-										[$color1, $color2, $color1]] );
+                                        [$color2, $color1, $color2],
+                                        [$color1, $color2, $color1]] );
  $canvas->cdPattern($pattern);
 
 Defines a new color matrix (C<< $pattern->[$line]->[$column] >>)
@@ -1666,7 +1665,7 @@ in the driver.
       </tr>
       <tr>
         <td><img src="http://kmx.github.io/perl-iup/imgcd-5.4.1/fonts.gif"></td>
-	<td><img src="http://kmx.github.io/perl-iup/imgcd-5.4.1/font_style.gif"></td>
+        <td><img src="http://kmx.github.io/perl-iup/imgcd-5.4.1/font_style.gif"></td>
       </tr>
     </tbody>
   </table>
@@ -2360,27 +2359,27 @@ The element B<IUP::Canvas> is used in the following sample scripts:
 
 =over
 
-=item * L<0-basic/canvas1.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/canvas1.pl> - IUP::Canvas example
+=item * L<0-basic/canvas1.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/canvas1.pl> - IUP::Canvas example
 
-=item * L<0-basic/canvas2.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/canvas2.pl> - IUP::Canvas example
+=item * L<0-basic/canvas2.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/canvas2.pl> - IUP::Canvas example
 
-=item * L<0-basic/canvas3.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/canvas3.pl> - IUP::Canvas example
+=item * L<0-basic/canvas3.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/canvas3.pl> - IUP::Canvas example
 
-=item * L<0-basic/cbox.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/cbox.pl> - IUP::Cbox example
+=item * L<0-basic/cbox.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/cbox.pl> - IUP::Cbox example
 
-=item * L<0-basic/colorbar.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/colorbar.pl> - IUP::ColorBar example
+=item * L<0-basic/colorbar.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/colorbar.pl> - IUP::ColorBar example
 
-=item * L<0-basic/layoutdialog.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/layoutdialog.pl> - IUP::LayoutDialog example
+=item * L<0-basic/layoutdialog.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/layoutdialog.pl> - IUP::LayoutDialog example
 
-=item * L<0-basic/sbox2.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/sbox2.pl> - IUP::Sbox example
+=item * L<0-basic/sbox2.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/sbox2.pl> - IUP::Sbox example
 
-=item * L<0-basic/scrollbar.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/scrollbar.pl> - IUP::Canvas (with scrollbar) example
+=item * L<0-basic/scrollbar.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/scrollbar.pl> - IUP::Canvas (with scrollbar) example
 
-=item * L<1-apps/app-mdi.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/1-apps/app-mdi.pl> - IUP app example
+=item * L<1-apps/app-mdi.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/1-apps/app-mdi.pl> - IUP app example
 
-=item * L<1-apps/app-sample1.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/1-apps/app-sample1.pl> - example used for screenshot - IUP.pod
+=item * L<1-apps/app-sample1.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/1-apps/app-sample1.pl> - example used for screenshot - IUP.pod
 
-=item * L<1-apps/app-sample2.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/1-apps/app-sample2.pl> - example based on the original sample.c
+=item * L<1-apps/app-sample2.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/1-apps/app-sample2.pl> - example based on the original sample.c
 
 =back 
 

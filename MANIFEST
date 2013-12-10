@@ -48,6 +48,7 @@ examples/0-basic/menu.pl
 examples/0-basic/message.pl
 examples/0-basic/message_clone.pl
 examples/0-basic/messagedlg.pl
+examples/0-basic/mglplot1.pl
 examples/0-basic/plot1.pl
 examples/0-basic/plot2.pl
 examples/0-basic/plot3.pl

@@ -78,20 +78,20 @@ see L<IUP::Manual::03_Attributes|IUP::Manual::03_Attributes>. Attributes specifi
 
 =over
 
-=item * L<BGCOLOR|IUP::Manual::03_Attributes/BGCOLOR>
+=item L<BGCOLOR|IUP::Manual::03_Attributes/BGCOLOR>
 
 The background color of the menu, affects all items in the menu. 
 
-=item * B<X<RADIO>RADIO> (non inheritable)
+=item B<RADIO>
 
-Enables the automatic toggle of one
+I<(non inheritable)> Enables the automatic toggle of one
 child item. When a child item is selected the other item is
 automatically deselected. The menu acts like a L<IUP::Radio|IUP::Radio> for its
 children. Submenus and their children are not affected.
 
-=item * L<WID|IUP::Manual::03_Attributes/WID> (non inheritable)
+=item L<WID|IUP::Manual::03_Attributes/WID>
 
-In Windows, returns the HMENU of the menu.
+I<(non inheritable)> In Windows, returns the HMENU of the menu.
 
 =back
 
@@ -116,8 +116,7 @@ The following L<common callbacks|IUP::Manual::04_Callbacks/Common Callbacks> are
 
 =over
 
-=item * L<MAP_CB|IUP::Manual::04_Callbacks/MAP_CB>,
-L<UNMAP_CB|IUP::Manual::04_Callbacks/UNMAP_CB>
+=item L<MAP_CB|IUP::Manual::04_Callbacks/MAP_CB>, L<UNMAP_CB|IUP::Manual::04_Callbacks/UNMAP_CB>
 
 =back
 
@@ -149,27 +148,27 @@ The element B<IUP::Menu> is used in the following sample scripts:
 
 =over
 
-=item * L<0-basic/dialog2.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/dialog2.pl> - IUP::Dialog example
+=item * L<0-basic/dialog2.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/dialog2.pl> - IUP::Dialog example
 
-=item * L<0-basic/item.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/item.pl> - IUP::Item Example
+=item * L<0-basic/item.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/item.pl> - IUP::Item Example
 
-=item * L<0-basic/layoutdialog.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/layoutdialog.pl> - IUP::LayoutDialog example
+=item * L<0-basic/layoutdialog.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/layoutdialog.pl> - IUP::LayoutDialog example
 
-=item * L<0-basic/menu.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/menu.pl> - IUP::Menu example
+=item * L<0-basic/menu.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/menu.pl> - IUP::Menu example
 
-=item * L<0-basic/separator.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/separator.pl> - IUP::Separator example
+=item * L<0-basic/separator.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/separator.pl> - IUP::Separator example
 
-=item * L<0-basic/submenu.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/submenu.pl> - IUP::Submenu example
+=item * L<0-basic/submenu.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/submenu.pl> - IUP::Submenu example
 
-=item * L<0-basic/tray.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/tray.pl> - IUP::Dialog + TRAY / TRAYTIP / TRAYIMAGE example
+=item * L<0-basic/tray.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/tray.pl> - IUP::Dialog + TRAY / TRAYTIP / TRAYIMAGE example
 
-=item * L<1-apps/app-mdi.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/1-apps/app-mdi.pl> - IUP app example
+=item * L<1-apps/app-mdi.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/1-apps/app-mdi.pl> - IUP app example
 
-=item * L<1-apps/app-sample1.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/1-apps/app-sample1.pl> - example used for screenshot - IUP.pod
+=item * L<1-apps/app-sample1.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/1-apps/app-sample1.pl> - example used for screenshot - IUP.pod
 
-=item * L<1-apps/app-sample2.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/1-apps/app-sample2.pl> - example based on the original sample.c
+=item * L<1-apps/app-sample2.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/1-apps/app-sample2.pl> - example based on the original sample.c
 
-=item * L<1-apps/app-simple-demo.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/1-apps/app-simple-demo.pl> - example used for screenshot - IUP.pod
+=item * L<1-apps/app-simple-demo.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/1-apps/app-simple-demo.pl> - example used for screenshot - IUP.pod
 
 =back 
 

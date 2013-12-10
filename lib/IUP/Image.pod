@@ -15,7 +15,7 @@ Creates an image to be shown on a label, button, toggle, or as a cursor.
  #8bit/256colors image + color palette definition + 2-dimensional pixels array
  my $img = IUP::Image->new( 
              BPP=>8, colors=>[ "0 0 0", "255 0 0", "128 0 0" ],
-	     pixels=>[[ 0,0,0,0,0,0,0,0,0,0,0,0 ],
+             pixels=>[[ 0,0,0,0,0,0,0,0,0,0,0,0 ],
                       [ 0,0,0,0,2,2,2,2,2,2,2,0 ],
                       [ 0,0,0,0,0,2,1,1,1,1,2,0 ],
                       [ 0,0,0,0,0,2,1,1,1,1,2,0 ],
@@ -31,9 +31,9 @@ Creates an image to be shown on a label, button, toggle, or as a cursor.
  
  #the same 8bit/256colors image - defined by 1-dimensional pixels array
  my $img = IUP::Image->new(
-	     HEIGHT=>12, WIDTH=>12, BPP=>8, # HEIGHT*WIDTH*BPP/8 should match the size of pixels
+             HEIGHT=>12, WIDTH=>12, BPP=>8, # HEIGHT*WIDTH*BPP/8 should match the size of pixels
              colors=>[ "0 0 0", "255 0 0", "128 0 0" ],
-	     pixels=>[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,0,
+             pixels=>[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,0,
                       0,0,0,0,0,2,1,1,1,1,2,0,0,0,0,0,0,2,1,1,1,1,2,0,
                       0,0,0,0,2,1,1,1,1,1,2,0,0,0,0,2,1,1,1,1,1,1,2,0,
                       0,0,2,1,1,1,1,1,2,2,2,0,0,2,1,1,1,1,1,2,0,0,2,0,
@@ -77,16 +77,16 @@ Creates an image to be shown on a label, button, toggle, or as a cursor.
 
  #8bit/256colors image + color palette definition + pixels in a rawbuffer
  my $img = IUP::Image->new(
-	     HEIGHT=>12, WIDTH=>12, BPP=>8, # HEIGHT*WIDTH*BPP/8 should match the size of pixels
+             HEIGHT=>12, WIDTH=>12, BPP=>8, # HEIGHT*WIDTH*BPP/8 should match the size of pixels
              colors=>[ "0 0 0", "255 0 0", "128 0 0" ],
-	     pixels=>$rawdata, # e.g. $rawdata buffer got via sysread()
+             pixels=>$rawdata, # e.g. $rawdata buffer got via sysread()
  );
 
  #8bit/256colors image + pixels in a rawbuffer + setting color palette via attributes "0", "1", "2" ...
  my $img = IUP::Image->new(
-	     HEIGHT=>12, WIDTH=>12, BPP=>8, # HEIGHT*WIDTH*BPP/8 should match the size of pixels
+             HEIGHT=>12, WIDTH=>12, BPP=>8, # HEIGHT*WIDTH*BPP/8 should match the size of pixels
              0=>"0 0 0", 1=>"255 0 0", 2=>"128 0 0", #alternative color palete definition
-	     pixels=>$rawdata, # e.g. $rawdata buffer got via sysread()
+             pixels=>$rawdata, # e.g. $rawdata buffer got via sysread()
  );
 
  #creating image object from file
@@ -217,13 +217,13 @@ see L<IUP::Manual::03_Attributes|IUP::Manual::03_Attributes>. Attributes specifi
 
 =over
 
-=item * B<0> Color in index 0.
+=item B<0> Color in index 0.
 
-=item * B<1> Color in index 1.
+=item B<1> Color in index 1.
 
-=item * B<2> Color in index 2.
+=item B<2> Color in index 2.
 
-=item * B<(n)> Color in index n.
+=item B<(n)> Color in index n.
 
 Example C<< $image->SetAttribute( 0=>"0 0 220", 1=>"0 220 0" ) >>
 
@@ -239,43 +239,43 @@ defined within an index less than 16.
 
 Used only for images created via C<< IUP::Image->new( pixels=>...) >> not C<< IUP::Image->new( file=>... ) >>.
 
-=item * B<BGCOLOR>
+=item B<BGCOLOR>
 
 The color used for transparency. If not defined uses the
 BGCOLOR of the control that contains the image.
 
-=item * B<BPP> (read-only)
+=item B<BPP>
 
-Returns the number of bits per pixel in the image (8 or 24 or 32). 
+I<(read-only)> Returns the number of bits per pixel in the image (8 or 24 or 32). 
 
-=item * B<CHANNELS> (read-only)
+=item B<CHANNELS>
 
-Returns the number of channels in the image.
+I<(read-only)> Returns the number of channels in the image.
 Images created with BPP=>8 returns 1, with BPP=>24 returns
 3 and with BPP=>32 returns 4. 
 
-=item * B<HEIGHT> (read-only)
+=item B<HEIGHT>
 
-Image height in pixels.
+I<(read-only)> Image height in pixels.
 
-=item * B<HOTSPOT>
+=item B<HOTSPOT>
 
 Hotspot is the position inside a cursor image indicating
 the mouse-click spot. Its value is given by the x and y coordinates
 inside a cursor image. Its value has the format "x:y", where x and y
 are integers defining the coordinates in pixels. Default: "0:0".
 
-=item * B<RASTERSIZE> (read-only)
+=item B<RASTERSIZE>
 
-Returns the image size in pixels. (since iup-3.0)
+I<(read-only)> Returns the image size in pixels. (since iup-3.0)
 
-=item * B<WID> (read-only)
+=item B<WID>
 
-Returns the internal pixels data pointer. (since iup-3.0)
+I<(read-only)> Returns the internal pixels data pointer. (since iup-3.0)
 
-=item * B<WIDTH> (read-only)
+=item B<WIDTH>
 
-Image width in pixels.
+I<(read-only)> Image width in pixels.
 
 =back
 
@@ -286,29 +286,29 @@ The element B<IUP::Image> is used in the following sample scripts:
 
 =over
 
-=item * L<0-basic/button.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/button.pl> - IUP::Button example
+=item * L<0-basic/button.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/button.pl> - IUP::Button example
 
-=item * L<0-basic/cbox.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/cbox.pl> - IUP::Cbox example
+=item * L<0-basic/cbox.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/cbox.pl> - IUP::Cbox example
 
-=item * L<0-basic/dialog2.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/dialog2.pl> - IUP::Dialog example
+=item * L<0-basic/dialog2.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/dialog2.pl> - IUP::Dialog example
 
-=item * L<0-basic/gauge.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/gauge.pl> - IUP::Gauge example
+=item * L<0-basic/gauge.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/gauge.pl> - IUP::Gauge example
 
-=item * L<0-basic/image.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/image.pl> - IUP::Image example
+=item * L<0-basic/image.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/image.pl> - IUP::Image example
 
-=item * L<0-basic/label.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/label.pl> - IUP::Label and IUP::Link example
+=item * L<0-basic/label.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/label.pl> - IUP::Label and IUP::Link example
 
-=item * L<0-basic/progressbar2.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/progressbar2.pl> - IUP::ProgressBar example
+=item * L<0-basic/progressbar2.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/progressbar2.pl> - IUP::ProgressBar example
 
-=item * L<0-basic/progressbar3.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/progressbar3.pl> - IUP::ProgressBar example
+=item * L<0-basic/progressbar3.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/progressbar3.pl> - IUP::ProgressBar example
 
-=item * L<0-basic/toggle.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/toggle.pl> - IUP::Toggle example
+=item * L<0-basic/toggle.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/toggle.pl> - IUP::Toggle example
 
-=item * L<0-basic/tray.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/0-basic/tray.pl> - IUP::Dialog + TRAY / TRAYTIP / TRAYIMAGE example
+=item * L<0-basic/tray.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/0-basic/tray.pl> - IUP::Dialog + TRAY / TRAYTIP / TRAYIMAGE example
 
-=item * L<1-apps/app-mdi.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/1-apps/app-mdi.pl> - IUP app example
+=item * L<1-apps/app-mdi.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/1-apps/app-mdi.pl> - IUP app example
 
-=item * L<1-apps/app-sample2.pl|https://metacpan.org/source/KMX/IUP-0.200_10/examples/1-apps/app-sample2.pl> - example based on the original sample.c
+=item * L<1-apps/app-sample2.pl|https://metacpan.org/source/KMX/IUP-0.200_11/examples/1-apps/app-sample2.pl> - example based on the original sample.c
 
 =back 
 
