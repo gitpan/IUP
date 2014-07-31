@@ -31,7 +31,7 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Alien::IUP" : "0.6",
+            "Alien::IUP" : "0.7",
             "Carp" : "0",
             "ExtUtils::CBuilder" : "0",
             "Module::Build" : "0.36",
@@ -42,7 +42,7 @@
       },
       "configure" : {
          "requires" : {
-            "Alien::IUP" : "0.6",
+            "Alien::IUP" : "0.7",
             "Module::Build" : "0.36",
             "perl" : "5.008008"
          }
@@ -58,7 +58,7 @@
    "provides" : {
       "IUP" : {
          "file" : "lib/IUP.pm",
-         "version" : "0.202"
+         "version" : "0.202_1"
       },
       "IUP::Button" : {
          "file" : "lib/IUP/Button.pm"
@@ -204,6 +204,9 @@
       "IUP::Sbox" : {
          "file" : "lib/IUP/Sbox.pm"
       },
+      "IUP::Scintilla" : {
+         "file" : "lib/IUP/Scintilla.pm"
+      },
       "IUP::ScrollBox" : {
          "file" : "lib/IUP/ScrollBox.pm"
       },
@@ -250,7 +253,7 @@
          "file" : "lib/IUP/Zbox.pm"
       }
    },
-   "release_status" : "stable",
+   "release_status" : "testing",
    "resources" : {
       "bugtracker" : {
          "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=IUP"
@@ -262,5 +265,5 @@
          "url" : "https://github.com/kmx/perl-iup"
       }
    },
-   "version" : "0.202"
+   "version" : "0.202_1"
 }

@@ -9,8 +9,7 @@ use IUP::Internal::LibraryIup;
 use IUP::Constants;
 
 # following recommendation from http://www.dagolden.com/index.php/369/version-numbers-should-be-boring/
-our $VERSION = "0.202";
-$VERSION = eval $VERSION;
+our $VERSION = "0.202_1";
 
 sub BEGIN {
   #warn "[DEBUG] IUP::BEGIN() started\n";
@@ -33,7 +32,7 @@ sub import {
      ':basic' => [qw/Constants Button Cbox Clipboard ColorBar ColorBrowser ColorDlg ProgressDlg Dial Dialog FileDlg Fill FontDlg Frame
                      Hbox Image Item Label List Menu MessageDlg Normalizer ProgressBar Radio Expander ScrollBox Link GridBox 
                      Sbox Separator Spin SpinBox Split Submenu Tabs Text Timer Toggle Tree User Val Vbox Zbox/], 
-     ':extended' => [qw/Matrix MatrixList Cells Canvas CanvasGL PPlot MglPlot LayoutDialog ElementPropertiesDialog Gauge/],
+     ':extended' => [qw/Matrix MatrixList Cells Canvas CanvasGL PPlot MglPlot LayoutDialog ElementPropertiesDialog Gauge Scintilla/],
      ':all' => [],
   );  
   @{$tags{':all'}} = ( @{$tags{':basic'}}, @{$tags{':extended'}} );

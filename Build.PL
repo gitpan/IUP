@@ -22,12 +22,16 @@ my $cflags = Alien::IUP->config('INC');
 $cflags .= ' -DHAVELIB_IUPCD'         if Alien::IUP->havelib('iupcd');
 $cflags .= ' -DHAVELIB_IUPIM'         if Alien::IUP->havelib('iupim');
 $cflags .= ' -DHAVELIB_IUPGL'         if Alien::IUP->havelib('iupgl');
+$cflags .= ' -DHAVELIB_IUPGLCONTROLS' if Alien::IUP->havelib('iupglcontrols');
 $cflags .= ' -DHAVELIB_IUPOLE'        if Alien::IUP->havelib('iupole');
 $cflags .= ' -DHAVELIB_IUPCONTROLS'   if Alien::IUP->havelib('iupcontrols');
 $cflags .= ' -DHAVELIB_IUP_PPLOT'     if Alien::IUP->havelib('iup_pplot');
 $cflags .= ' -DHAVELIB_IUP_MGLPLOT'   if Alien::IUP->havelib('iup_mglplot');
+$cflags .= ' -DHAVELIB_IUP_SCINTILLA' if Alien::IUP->havelib('iup_scintilla');
 $cflags .= ' -DHAVELIB_IUPIMGLIB'     if Alien::IUP->havelib('iupimglib');
 $cflags .= ' -DHAVELIB_CDCONTEXTPLUS' if Alien::IUP->havelib('cdcontextplus');
+
+$lflags .= ' -limm32' if Alien::IUP->havelib('iup_scintilla') && $^O eq 'MSWin32';
 
 my $class = 'Module::Build';
 if (-d '.git') { #adding some custom actions relevant only for module development
@@ -71,7 +75,7 @@ my $builder = $class->new(
   build_requires       => { # need to have for running: ./Build (install|test)
     'perl'                 => 5.008008,
     'Module::Build'        => 0.36,
-    'Alien::IUP'           => 0.600,
+    'Alien::IUP'           => 0.700,
     'Test::More'           => 0,
     'Carp'                 => 0,
     'constant'             => 0,
@@ -79,7 +83,7 @@ my $builder = $class->new(
   configure_requires   => { # need to have for running: perl Buil.PL
     'perl'                 => 5.008008,
     'Module::Build'        => 0.36,
-    'Alien::IUP'           => 0.600,
+    'Alien::IUP'           => 0.700,
   },
   c_source             => 'src', # ppport.h
   extra_linker_flags   => $lflags,

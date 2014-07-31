@@ -62,6 +62,7 @@ examples/0-basic/progressbar3.pl
 examples/0-basic/radio.pl
 examples/0-basic/sbox1.pl
 examples/0-basic/sbox2.pl
+examples/0-basic/scintilla.pl
 examples/0-basic/scrollbar.pl
 examples/0-basic/separator.pl
 examples/0-basic/submenu.pl
@@ -202,6 +203,8 @@ lib/IUP/Radio.pm
 lib/IUP/Radio.pod
 lib/IUP/Sbox.pm
 lib/IUP/Sbox.pod
+lib/IUP/Scintilla.pm
+lib/IUP/Scintilla.pod
 lib/IUP/ScrollBox.pm
 lib/IUP/ScrollBox.pod
 lib/IUP/Separator.pm
